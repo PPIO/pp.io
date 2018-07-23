@@ -10,7 +10,6 @@ const fs = require('fs');
 const exists = fs.existsSync;
 const writeFile = fs.writeFileSync;
 
-const defaults = require('lodash/defaultsDeep');
 const config = require('../webpack/config');
 const dllConfig = config.dllPlugin.defaults
 const dllManifestPath = path.join(dllConfig.path, 'manifest.json');

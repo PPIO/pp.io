@@ -154,7 +154,12 @@ for (let i = 0; i <= langList.length; i++) {
             'babel-loader',
           ],
         },
-      ],
+      ].concat(
+        utils.styleLoaders({
+          extract: false,
+          sourceMap: config.dev.cssSourceMap,
+        }),
+      ),
     },
 
     // Don't use hashes in dev mode for better performance

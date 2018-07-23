@@ -12,6 +12,8 @@ const dllPluginConfig = require('./config').dllPlugin
 const dllConfig = dllPluginConfig.defaults
 const outputPath = join(process.cwd(), dllConfig.path)
 
+console.log('dll webpack running')
+
 module.exports = merge(webpackBaseConfig, {
   mode: 'development',
   context: process.cwd(),

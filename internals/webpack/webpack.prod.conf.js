@@ -115,33 +115,12 @@ for (let i = 0; i <= langList.length; i++) {
             'babel-loader',
           ],
         },
-        {
-          test: /\.scss$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 1,
-                sourceMap: true,
-              },
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                ident: 'postcss',
-                sourceMap: true,
-              },
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true,
-              },
-            },
-          ],
-        },
-      ],
+      ].concat(
+        utils.styleLoaders({
+          extract: true,
+          sourceMap: config.build.productionSourceMap,
+        }),
+      ),
     },
 
     output: {

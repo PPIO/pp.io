@@ -9,8 +9,7 @@ module.exports = {
   dllPlugin: {
     defaults: {
       /**
-       * we need to exclude dependencies which are not intended for the browser
-       * by listing them here.
+       * 排除掉不用于浏览器的依赖
        */
       exclude: [
         'chalk',
@@ -23,10 +22,9 @@ module.exports = {
       ],
 
       /**
-       * Specify any additional dependencies here. We include core-js and lodash
-       * since a lot of our dependencies depend on them and they get picked up by webpack.
+       * 额外的依赖。
        */
-      include: ['eventsource-polyfill', 'lodash'],
+      include: [],
 
       // The path where the DLL manifest and bundle will get built
       path: path.resolve(process.cwd(), 'dlls'),
