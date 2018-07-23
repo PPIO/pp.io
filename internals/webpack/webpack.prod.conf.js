@@ -44,7 +44,6 @@ for (let i = 0; i <= langList.length; i++) {
   const pagePlugins = []
   pagesArr.forEach(page => {
     const pageName = page.split('/')[0]
-    console.log(pageName)
     pagePlugins.push(
       new HtmlWebpackPlugin({
         filename: `${lang || 'en'}/${pageName}.html`,
