@@ -1,0 +1,32 @@
+header {
+  height: 60px;
+  line-height: 60px;
+
+  .container {
+    width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .logo {
+    font-size: 0;
+    background-image: url(../../../../assets/img/logo.svg);
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  nav {
+    float: right;
+
+    a {
+      display: inline-block;
+      width: 30px;
+      margin: 0 4px;
+      cursor: pointer;
+      color: #333;
+      font-size: 14px;
+    }
+  }
+}
