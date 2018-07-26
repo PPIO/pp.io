@@ -30,6 +30,9 @@ module.exports = {
           loader: 'handlebars-loader',
           options: {
             inlineRequires: /img|font|media/,
+            precompileOptions: {
+              knownHelpersOnly: false,
+            },
           },
         },
       },
