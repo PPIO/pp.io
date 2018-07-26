@@ -72,9 +72,7 @@ function dependencyHandlers() {
   })
 }
 
-const webpackConfigs = []
-for (let i = 0; i <= langList.length; i++) {
-  const lang = langList[i] || 'en'
+const webpackConfigs = langList.map(lang => {
   // entries
   const pageEntries = {}
   const pagesArr = utils.getPagesArr()
@@ -95,12 +93,16 @@ for (let i = 0; i <= langList.length; i++) {
         filename: `${lang}/${pageName}.html`,
         template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
         inject: true,
+        lang,
       }),
     )
   })
 
   // merge plugins
   const plugins = dependencyHandlers().concat([
+    new webpack.DefinePlugin({
+      LANGUAGE: JSON.stringify(lang),
+    }),
     new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
@@ -111,7 +113,7 @@ for (let i = 0; i <= langList.length; i++) {
     }),
   ])
 
-  const devConfig = merge(baseWebpackConfig, {
+  return merge(baseWebpackConfig, {
     name: lang,
 
     mode: 'development',
@@ -145,7 +147,6 @@ for (let i = 0; i <= langList.length; i++) {
 
     plugins: plugins,
   })
-  webpackConfigs.push(devConfig)
-}
+})
 
 module.exports = webpackConfigs

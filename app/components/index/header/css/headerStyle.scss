@@ -1,20 +1,18 @@
+@import "~Assets/css/base";
+
+$headerHeight: 64px;
+$headerGrid: 30px;
+$navColor: #646464;
+
 header {
-  height: 60px;
-  line-height: 60px;
+  height: $headerHeight;
+  line-height: $headerHeight;
+  overflow: hidden;
+  border-bottom: 1px solid #cecece;
+  background-color: #fff;
 
-  .container {
-    width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .logo {
-    font-size: 0;
-    background-image: url(../../../../assets/img/logo.svg);
-    -webkit-background-size: contain;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  h1 {
+    display: inline-block;
   }
 
   nav {
@@ -22,11 +20,18 @@ header {
 
     a {
       display: inline-block;
-      width: 30px;
-      margin: 0 4px;
+      height: $headerHeight;
+      padding: 0 $headerGrid/2;
       cursor: pointer;
-      color: #333;
-      font-size: 14px;
+      color: $navColor;
+      opacity: 0.6;
+      transition: opacity linear 0.1s;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+        color: #323232;
+      }
     }
   }
 }

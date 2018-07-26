@@ -1,7 +1,4 @@
 import tpl from './footer.hbs'
+import translation from './translation.json'
 
-/* eslint-disable */
-export default () =>
-  tpl({
-    footerText: 'this is footer',
-  })
+export default options => tpl(translation[options.lang])

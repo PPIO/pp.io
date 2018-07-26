@@ -5,7 +5,7 @@ const uniq = require('lodash/uniq')
 const pkg = require('../../package')
 
 module.exports = {
-  lang: ['zh'],
+  lang: ['zh', 'en'],
   dllPlugin: {
     defaults: {
       // 排除的依赖

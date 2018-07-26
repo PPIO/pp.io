@@ -1,0 +1,12 @@
+{
+  "en": {
+    "title": "html boilerplate",
+    "des": "this is the description",
+    "keywords": ""
+  },
+  "zh": {
+    "title": "静态网页开发脚手架",
+    "des": "这里是描述",
+    "keywords": ""
+  }
+}

@@ -3,5 +3,4 @@ import '../../components/index/header/header'
 import '../../components/index/main/main'
 import '../../components/index/footer/footer'
 
-/* eslint-disable */
 console.log('welcome!')

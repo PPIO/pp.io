@@ -1,0 +1,12 @@
+{
+  "en": {
+    "log": "this is main component",
+    "introText": "welcome!",
+    "desText": "this is a boilerplate"
+  },
+  "zh": {
+    "log": "这是主要内容组件",
+    "introText": "欢迎",
+    "desText": "这是一个模板"
+  }
+}

@@ -1,8 +1,4 @@
 import tpl from './main.hbs'
+import translation from './translation.json'
 
-/* eslint-disable */
-export default () =>
-  tpl({
-    introText: 'welcome!',
-    desText: 'this is a boilerplate',
-  })
+export default options => tpl(translation[options.lang])

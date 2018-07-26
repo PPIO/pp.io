@@ -1,7 +1,7 @@
 'use strict'
 
 const path = require('path')
-const { HashedModuleIdsPlugin } = require('webpack')
+const { HashedModuleIdsPlugin, DefinePlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -22,13 +22,9 @@ function recursiveIssuer(m) {
   }
 }
 
-// i18n 多语言，export 多套 webpack 配置
+// export multiple webpack configs to support multi languages
 const langList = config.lang
-const webpackConfigs = []
-
-for (let i = 0; i <= langList.length; i++) {
-  const lang = langList[i] || 'en'
-
+const webpackConfigs = langList.map(lang => {
   const pagesArr = utils.getPagesArr()
   const pagePlugins = []
   pagesArr.forEach(page => {
@@ -39,6 +35,7 @@ for (let i = 0; i <= langList.length; i++) {
         template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
         inject: true,
         chunks: [`page/${pageName}`, 'common'],
+        lang,
         minify: {
           removeComments: true,
           collapseWhitespace: false,
@@ -110,6 +107,9 @@ for (let i = 0; i <= langList.length; i++) {
 
     devtool: config.build.productionSourceMap ? config.build.devtool : false,
     plugins: [
+      new DefinePlugin({
+        LANGUAGE: JSON.stringify(lang),
+      }),
       new UglifyJsPlugin({
         uglifyOptions: {
           compress: {
@@ -168,7 +168,7 @@ for (let i = 0; i <= langList.length; i++) {
     curConfig.plugins.push(new BundleAnalyzerPlugin())
   }
 
-  webpackConfigs.push(curConfig)
-}
+  return curConfig
+})
 
 module.exports = webpackConfigs

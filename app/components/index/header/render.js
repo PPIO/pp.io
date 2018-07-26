@@ -1,16 +1,12 @@
 import tpl from './header.hbs'
+import translation from './translation.json'
 
-/* eslint-disable no-undef */
-export default () =>
-  tpl({
-    title: 'Title',
-    des: 'this is a description',
-    nav: {
-      intro: 'Intro',
-      main: 'Main',
-      team: 'Team',
-      support: 'Support',
-      partner: 'Partner',
-    },
-  })
-/* eslint-enable */
+export default options =>
+  tpl(
+    Object.assign(
+      {
+        title: 'Boilerplate',
+      },
+      translation[options.lang],
+    ),
+  )

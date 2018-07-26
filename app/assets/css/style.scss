@@ -1,10 +1,31 @@
+@import "~sanitize.css";
 @import "./base";
 
 body {
-  height: 1500px;
+  color: #161616;
+  line-height: 1.5;
+  font-size: 16px;
+  background-color: #f7f7f7;
+
+  &.en {
+    font-family: Avenir, "Source Sans Pro", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  &.zh {
+    font-family: Avenir, "Source Sans Pro", "Hiragino Sans GB", "Helvetica Neue", Helvetica, "Microsoft YaHei", "\9ED1\4F53", Arial, sans-serif;
+  }
 }
 
-p {
-  color: $primeColor;
-  font-size: 20px;
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.container {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
