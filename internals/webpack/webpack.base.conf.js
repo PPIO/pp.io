@@ -1,6 +1,7 @@
 'use strict'
 
 const webpack = require('webpack')
+const path = require('path')
 
 const config = require('./config')
 const utils = require('./utils')
@@ -16,6 +17,10 @@ module.exports = {
     modules: ['node_modules', 'app'],
     extensions: ['.js', 'json'],
     mainFields: ['browser', 'jsnext:main', 'main'],
+    alias: {
+      '~Root': path.resolve(__dirname, 'app/'),
+      '~Assets': path.resolve(__dirname, 'app/assets/'),
+    },
   },
   module: {
     rules: [

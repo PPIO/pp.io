@@ -1,18 +1,13 @@
 /**
  * webpack dll plugin 配置
  */
-
-const { join } = require('path')
 const webpack = require('webpack')
-const merge = require('webpack-merge')
-const webpackBaseConfig = require('./webpack.base.conf')
 
 const dllPluginConfig = require('./config').dllPlugin
 
 const dllConfig = dllPluginConfig.defaults
-const outputPath = join(process.cwd(), dllConfig.path)
 
-module.exports = merge(webpackBaseConfig, {
+module.exports = {
   mode: 'development',
   context: process.cwd(),
   entry: dllConfig.dlls || dllPluginConfig.entry(),
@@ -22,16 +17,16 @@ module.exports = merge(webpackBaseConfig, {
   devtool: 'eval',
   output: {
     filename: '[name].dll.js',
-    path: outputPath,
+    path: dllConfig.path,
     library: '[name]',
   },
   plugins: [
     new webpack.DllPlugin({
-      name: '[name]_[hash]',
+      name: '[name]',
       path: dllConfig.manifestPath,
     }),
   ],
   performance: {
     hints: false,
   },
-})
+}

@@ -4,13 +4,13 @@ import tpl from './header.hbs'
 export default () =>
   tpl({
     title: 'Title',
-    des: __I18n__('this is a description'),
+    des: 'this is a description',
     nav: {
-      intro: __I18n__('Intro'),
-      main: __I18n__('Main'),
-      team: __I18n__('Team'),
-      support: __I18n__('Support'),
-      partner: __I18n__('Partner'),
+      intro: 'Intro',
+      main: 'Main',
+      team: 'Team',
+      support: 'Support',
+      partner: 'Partner',
     },
   })
 /* eslint-enable */

@@ -8,25 +8,13 @@ module.exports = {
   lang: ['zh'],
   dllPlugin: {
     defaults: {
-      /**
-       * 排除掉不用于浏览器的依赖
-       */
-      exclude: [
-        'chalk',
-        'compression',
-        'cross-env',
-        'express',
-        'ip',
-        'minimist',
-        'sanitize.css',
-      ],
+      // 排除的依赖
+      exclude: ['sanitize.css'],
 
-      /**
-       * 额外的依赖。
-       */
+      // 额外的依赖。
       include: [],
 
-      // The path where the DLL manifest and bundle will get built
+      // dll manifest.json 输出路径
       path: path.resolve(process.cwd(), 'dlls'),
       manifestPath: path.resolve(process.cwd(), 'dlls/manifest.json'),
     },
@@ -38,7 +26,7 @@ module.exports = {
       const includeDependencies = uniq(dependencyNames.concat(include))
 
       return {
-        dependencies: pullAll(includeDependencies, exclude),
+        vendor: pullAll(includeDependencies, exclude),
       }
     },
   },

@@ -4,4 +4,4 @@ import '../../components/index/main/main'
 import '../../components/index/footer/footer'
 
 /* eslint-disable */
-console.log(__I18n__('welcome!'))
+console.log('welcome!')

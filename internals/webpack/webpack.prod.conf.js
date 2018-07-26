@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const StringReplacePlugin = require('string-replace-webpack-plugin')
 const merge = require('webpack-merge')
 
 const utils = require('./utils')
@@ -25,20 +24,10 @@ function recursiveIssuer(m) {
 
 // i18n 多语言，export 多套 webpack 配置
 const langList = config.lang
-const langConfigs = {}
-langList.forEach(lang => {
-  const wholeConfig = {}
-  utils.getLangList(lang).forEach(configPath => {
-    const config = require(`../../app/${configPath}`)
-    Object.assign(wholeConfig, config)
-  })
-  langConfigs[lang] = wholeConfig
-})
-
 const webpackConfigs = []
 
 for (let i = 0; i <= langList.length; i++) {
-  const lang = langList[i] || null
+  const lang = langList[i] || 'en'
 
   const pagesArr = utils.getPagesArr()
   const pagePlugins = []
@@ -46,7 +35,7 @@ for (let i = 0; i <= langList.length; i++) {
     const pageName = page.split('/')[0]
     pagePlugins.push(
       new HtmlWebpackPlugin({
-        filename: `${lang || 'en'}/${pageName}.html`,
+        filename: `${lang}/${pageName}.html`,
         template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
         inject: true,
         chunks: [`page/${pageName}`, 'common'],
@@ -84,6 +73,8 @@ for (let i = 0; i <= langList.length; i++) {
   })
 
   const curConfig = merge(baseWebpackConfig, {
+    name: lang,
+
     mode: 'production',
 
     entry: {
@@ -93,43 +84,16 @@ for (let i = 0; i <= langList.length; i++) {
     },
 
     module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: StringReplacePlugin.replace({
-                replacements: [
-                  {
-                    pattern: /__I18n__\(['"](.*?)['"]\)/gi,
-                    replacement: (match, p1) => {
-                      if (!langConfigs[lang]) return `'${p1}'`
-                      return `'${langConfigs[lang][p1]}'` || `'${p1}'`
-                    },
-                  },
-                ],
-              }),
-            },
-            'babel-loader',
-          ],
-        },
-      ].concat(
-        utils.styleLoaders({
-          extract: true,
-          sourceMap: config.build.productionSourceMap,
-        }),
-      ),
+      rules: utils.styleLoaders({
+        extract: true,
+        sourceMap: config.build.productionSourceMap,
+      }),
     },
 
     output: {
       path: config.build.assetsRoot,
-      filename: `${lang || 'en'}/${utils.assetsPath(
-        'js/[name].[chunkhash].js',
-      )}`,
-      chunkFilename: `${lang || 'en'}/${utils.assetsPath(
-        'js/[name].[chunkhash].js',
-      )}`,
+      filename: `${lang}/${utils.assetsPath('js/[name].[chunkhash].js')}`,
+      chunkFilename: `${lang}/${utils.assetsPath('js/[name].[chunkhash].js')}`,
     },
 
     optimization: {
@@ -157,10 +121,8 @@ for (let i = 0; i <= langList.length; i++) {
       }),
       // extract css into its own file
       new MiniCssExtractPlugin({
-        filename: `${lang || 'en'}/${utils.assetsPath(
-          'css/[name].[contentHash].css',
-        )}`,
-        chunkFilename: `${lang || 'en'}/${utils.assetsPath(
+        filename: `${lang}/${utils.assetsPath('css/[name].[contentHash].css')}`,
+        chunkFilename: `${lang}/${utils.assetsPath(
           'css/[name].[contentHash].css',
         )}`,
       }),
