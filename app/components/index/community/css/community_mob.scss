@@ -1,0 +1,16 @@
+@import "community";
+
+.ppio-community {
+  p {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .community-subscribe {
+    width: 100%;
+
+    .subscribe-btn {
+      width: 130px;
+    }
+  }
+}

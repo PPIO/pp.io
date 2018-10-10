@@ -74,11 +74,11 @@ const webpackConfigs = langList.map(lang => {
       new HtmlWebpackPlugin({
         filename: `${lang}/${pageName}.html`,
         template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-        chunks: ['picturefill', page],
+        chunks: ['picturefill', 'mob-detect', 'browsehappy', page],
         lang,
         isMob: false,
         inject: false, // handle injection in render.js
-        headChunks: ['picturefill'],
+        headChunks: ['picturefill', 'mob-detect', 'browsehappy'],
       }),
     )
 

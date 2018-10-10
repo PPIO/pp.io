@@ -1,5 +1,14 @@
-<footer class="index-footer">
+<footer class="ppio-footer">
   <div class="container">
-    <%= footerText %>
+    <div class="social">
+      <% social.forEach(function(platform){ %>
+        <a class="footer-social-link social_<%= platform.platform %>" href="<%= platform.link %>"><%= platform.platform %></a>
+      <% }); %>
+    </div>
+    <h1 class="logo">
+      <%= title %>
+      <span class="logo-image"></span>
+    </h1>
+    <p class="copyright"><%= copyright %></p>
   </div>
 </footer>

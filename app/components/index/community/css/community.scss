@@ -1,0 +1,87 @@
+@import "~Assets/css/vars";
+
+.ppio-community {
+  color: #fff;
+  text-align: center;
+  @include retina-background-image('../img/community-bg', 'png', false);
+  background-size: cover;
+  background-position: center;
+
+  .container {
+    border-bottom: 0;
+  }
+
+  h3 {
+    color: #fff;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  .community-subscribe {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 460px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 18px;
+
+    input {
+      width: 100%;
+      height: 60px;
+      border-radius: 30px;
+      padding-left: 20px;
+      text-align: left;
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #fff;
+    }
+
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #fff;
+    }
+
+    :-ms-input-placeholder { /* IE 10+ */
+      color: #fff;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+      color: #fff;
+    }
+
+    .subscribe-btn {
+      position: absolute;
+      height: 60px;
+      width: 155px;
+      right: 0;
+      top: 0;
+      background-color: #fff;
+      color: $fontColor;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  .join-btn {
+    display: block;
+    width: 252px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    font-size: 18px;
+    background-color: #fff;
+    color: $fontColor;
+
+    &:hover {
+      box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

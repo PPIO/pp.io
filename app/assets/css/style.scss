@@ -1,6 +1,5 @@
 @import "~sanitize.css";
 @import "./vars";
-@import "./fonts.css";
 
 body {
   color: $fontColor;
@@ -11,13 +10,13 @@ body {
   line-height: 1.42115;
 
   &.en {
-    font-family: "Futura", -apple-system, SF UI Text, Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: normal;
     font-style: normal;
   }
 
   &.zh {
-    font-family: "Futura", -apple-system, SF UI Text, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: normal;
     font-style: normal;
   }
@@ -29,6 +28,8 @@ h3,
 h4 {
   margin: 0;
   font-weight: normal;
+  font-family: $darkFontColor;
+  color: $darkFontColor;
 }
 
 input,
@@ -37,15 +38,52 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 1px solid $primeColor;
-  border-radius: 2px;
   outline: none;
 }
 
 .container {
-  width: 1000px;
+  width: 100%;
+  max-width: $contentWidth;
   margin-left: auto;
   margin-right: auto;
+}
+
+.ppio-anchor {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all 0.1s linear;
+
+  &:hover {
+    color: $fontColor;
+    background-color: #fff;
+  }
+}
+
+.ppio-page-block {
+  position: relative;
+  color: $fontColor;
+
+  .container {
+    padding: 44px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  h3 {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: $blockHeadingSize;
+    text-align: center;
+  }
+
+  h4 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: $blockChildHeadingSize;
+  }
 }
 
 .browse-happy {

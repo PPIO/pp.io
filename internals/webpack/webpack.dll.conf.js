@@ -28,6 +28,7 @@ module.exports = {
       context: __dirname,
     }),
   ],
+  target: 'node',
   performance: {
     hints: false,
   },

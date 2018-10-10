@@ -1,0 +1,17 @@
+@import "./advantages";
+
+.ppio-advantages {
+  .advantage-content {
+    text-align: left;
+  }
+
+  .advantages-content {
+    display: block;
+  }
+
+  .advantage-block {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

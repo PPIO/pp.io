@@ -1,0 +1,40 @@
+@import "~Assets/css/vars";
+
+.ppio-scenarios {
+  p {
+    margin: 0;
+  }
+
+  .scenario-content {
+    text-align: justify;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      visibility: hidden;
+    }
+  }
+
+  .sce-block {
+    position: relative;
+    display: inline-block;
+    width: 470px;
+    margin-bottom: 32px;
+    padding-left: 74px;
+    text-align: left;
+
+    .sce-title {
+      margin-bottom: 6px;
+      margin-top: 0;
+    }
+
+    .sce-icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 54px;
+      height: 54px;
+    }
+  }
+}

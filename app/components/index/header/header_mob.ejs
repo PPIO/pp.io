@@ -1,0 +1,23 @@
+<header class="ppio-header">
+  <div class="container">
+    <div class="header-content">
+      <h1 class="logo">
+        <%= title %>
+        <a class="top-anchor" href="#"><span class="logo-image"></span></a>
+        <span class="logo-text"></span>
+      </h1>
+      <span class="nav-handler">
+        <span class="handler-bar bar1"></span>
+        <span class="handler-bar bar2"></span>
+        <span class="handler-bar bar3"></span>
+      </span>
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="nav-content">
+      <% nav.forEach(function(navItem){ %>
+        <a class="nav-item" href="<%= navItem.href %>}}"><%= navItem.name %></a>
+      <% }); %>
+    </div>
+  </nav>
+</header>

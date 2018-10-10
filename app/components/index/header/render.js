@@ -1,5 +1,7 @@
 module.exports = options => {
-  const tpl = require('./header.ejs')
+  const tpl = options.isMob
+    ? require('./header_mob.ejs')
+    : require('./header.ejs')
 
   const transData = require('./translation.json')[options.lang]
 
@@ -8,20 +10,24 @@ module.exports = options => {
     title: 'PPIO',
     nav: [
       {
-        name: transData.nav.intro,
-        anchor: '#intro',
+        name: transData.nav.guide,
+        href: '',
       },
       {
-        name: transData.nav.install,
-        anchor: '#labs',
+        name: transData.nav.api,
+        href: '',
       },
       {
-        name: transData.nav.usage,
-        anchor: '#join',
+        name: transData.nav.blog,
+        href: '',
       },
       {
-        name: transData.nav.support,
-        anchor: '#community',
+        name: transData.nav.projects,
+        href: '',
+      },
+      {
+        name: transData.nav.github,
+        href: '',
       },
     ],
   })

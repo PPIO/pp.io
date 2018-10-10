@@ -1,0 +1,66 @@
+@import "~Assets/css/vars";
+
+$footerHeight: 84px;
+$social: "facebook",
+  "youtube",
+  "twitter",
+  "github",
+  "linkedin";
+
+.ppio-footer {
+  height: $footerHeight;
+  line-height: $footerHeight;
+
+  .logo {
+    display: inline-block;
+    font-size: 0;
+    margin-right: 45px;
+    vertical-align: top;
+
+    .logo-image {
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+      @include retina-background-image('../img/footer-logo');
+      @include general-background-image;
+      vertical-align: middle;
+    }
+  }
+
+  .copyright {
+    display: inline-block;
+    border-left: 1px solid #979797;
+    padding-left: 24px;
+    color: rgba(0, 0, 0, 0.4);
+    height: 42px;
+    line-height: 42px;
+  }
+
+  .social {
+    float: right;
+    line-height: $footerHeight;
+
+    .footer-social-link {
+      display: inline-block;
+      width: 42px;
+      height: 42px;
+      background-size: 20px 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-size: 0;
+      opacity: 0.6;
+      transition: opacity 0.1s linear;
+      vertical-align: middle;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      @each $platform in $social {
+        &.social_#{$platform} {
+          @include retina-background-image('../img/#{$platform}');
+        }
+      }
+    }
+  }
+}

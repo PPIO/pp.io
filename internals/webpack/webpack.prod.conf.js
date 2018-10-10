@@ -59,11 +59,18 @@ const webpackConfigs = langList.map(lang => {
         Object.assign({}, pluginConfig, {
           filename: `${pageName}_${lang}.html`,
           template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-          chunks: ['picturefill', `page/${pageName}`, 'vendor', 'runtime'],
+          chunks: [
+            'picturefill',
+            'mob-detect',
+            'browsehappy',
+            `page/${pageName}`,
+            'vendor',
+            'runtime',
+          ],
           isMob: false,
           inject: false,
           lang,
-          headChunks: ['picturefill'],
+          headChunks: ['mob-detect', 'picturefill', 'browsehappy'],
         }),
       ),
     )

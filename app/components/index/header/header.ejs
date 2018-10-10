@@ -1,11 +1,12 @@
-<header class="index-header">
+<header class="ppio-header">
   <div class="container">
     <h1 class="logo">
       <%= title %>
+      <a class="top-anchor" href="#"><span class="logo-image"></span></a>
     </h1>
-    <nav>
+    <nav class="nav">
       <% nav.forEach(function(navItem){ %>
-        <a href="<%= navItem.anchor %>}}"><%= navItem.name %></a>
+        <a class="nav-item" href="<%= navItem.href %>}}"><%= navItem.name %></a>
       <% }); %>
     </nav>
   </div>

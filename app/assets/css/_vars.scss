@@ -1,8 +1,13 @@
-$primeColor: #161616;
-$fontColor: #161616;
-$pageWidth: 1280px;
-$contentWidth: 1024px;
-$fontSize: 16px;
+$fontColor: #646464;
+$darkFontColor: #161616;
+$contentWidth: 1100px;
+$fontSize: 14px;
+
+$headerHeight: 60px;
+$mobHeaderHeight: 40px;
+
+$blockHeadingSize: 32px;
+$blockChildHeadingSize: 18px;
 
 /* mixins */
 
@@ -42,15 +47,15 @@ $retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and
  * @param ext{String} file extension
  * @param with3x{Boolean} whether to include @3x images
  */
-@mixin retina-background-image($file, $ext: '.png', $with3x: true) {
-  background-image: url($file + $ext);
+@mixin retina-background-image($file, $ext: 'png', $with3x: true) {
+  background-image: url($file + '.' + $ext);
   @media #{$retina2x} {
-    background-image: url($file + '@2x' + $ext);
+    background-image: url($file + '@2x.' + $ext);
   }
 
   @if $with3x {
     @media #{$retina3x} {
-      background-image: url($file + '@3x' + $ext);
+      background-image: url($file + '@3x.' + $ext);
     }
   }
 }

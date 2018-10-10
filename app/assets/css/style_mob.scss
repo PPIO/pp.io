@@ -7,15 +7,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
-
-  &.en,
-  &.zh {
-    font-family: "Futura", sans-serif;
-  }
 }
 
 .container {
   width: 100%;
   padding: 0 20px;
   max-width: none;
+}
+
+.ppio-page-block {
+  .container {
+    padding: 44px 20px;
+  }
 }

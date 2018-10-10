@@ -1,6 +1,9 @@
 const headRenderer = require('../../components/head/render')
 const headerRenderer = require('../../components/index/header/render')
-const mainRenderer = require('../../components/index/main/render')
+const titleRenderer = require('../../components/index/title/render')
+const advantagesRenderer = require('../../components/index/advantages/render')
+const scenarioRenderer = require('../../components/index/scenario/render')
+const communityRenderer = require('../../components/index/community/render')
 const footerRenderer = require('../../components/index/footer/render')
 
 const getLangProp = require('../../render-utils').getLangProp
@@ -15,7 +18,10 @@ module.exports = props => {
     htmlLang: getLangProp(options.lang),
     head: headRenderer(options),
     header: headerRenderer(options),
-    main: mainRenderer(options),
+    title: titleRenderer(options),
+    advantages: advantagesRenderer(options),
+    scenario: scenarioRenderer(options),
+    community: communityRenderer(options),
     footer: footerRenderer(options),
   }
 

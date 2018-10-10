@@ -1,0 +1,32 @@
+{
+  "en": {
+    "title": "Application Scenarios",
+    "sceTitle_pri": "Private Data Storage",
+    "sceIntro_pri": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_med": "Media Apps",
+    "sceIntro_med": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_ent": "Enterprise Data Storage",
+    "sceIntro_ent": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_exc": "Data Exchange",
+    "sceIntro_exc": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_dec": "Decentralized Apps",
+    "sceIntro_dec": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_war": "Data Warehouse",
+    "sceIntro_war": "PPIO can store a huge amount of  datasets, and replace traditional unreliable local data storage or expensive cloud storage."
+  },
+  "zh": {
+    "title": "优势",
+    "sceTitle_pri": "Private Data Storage",
+    "sceIntro_pri": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_med": "Media Apps",
+    "sceIntro_med": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_ent": "Enterprise Data Storage",
+    "sceIntro_ent": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_exc": "Data Exchange",
+    "sceIntro_exc": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_dec": "Decentralized Apps",
+    "sceIntro_dec": "PPIO can provide ways to match the file assets sellers and buyers, and handle transactions in a secure and reliable way, without requiring an intermediate party.",
+    "sceTitle_war": "Data Warehouse",
+    "sceIntro_war": "PPIO can store a huge amount of  datasets, and replace traditional unreliable local data storage or expensive cloud storage."
+  }
+}

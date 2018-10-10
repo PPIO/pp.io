@@ -1,0 +1,17 @@
+<div class="ppio-scenarios ppio-page-block" id="scenarios">
+  <div class="container">
+    <h3 class="scenario-title"><%= title %></h3>
+    <div class="scenario-content">
+      <% scenarios.forEach(function(sce){ %>
+        <div class="sce-block">
+          <img class="sce-icon"
+               src="<%= sce.icon %>"
+               srcset="<%= sce.icon %> 1x, <%= sce.icon2x %> 2x, <%= sce.icon3x %> 3x"
+               alt="">
+          <h4 class="sce-title"><%= sce.title %></h4>
+          <p class="sce-intro"><%= sce.intro %></p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
