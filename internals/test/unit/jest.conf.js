@@ -16,6 +16,6 @@ module.exports = {
       './node_modules/babel-jest',
     ),
   },
-  testPathIgnorePatterns: ['<rootDir>/test/e2e'],
+  testPathIgnorePatterns: ['<rootDir>/test/e2e/', '/node_modules/'],
   setupFiles: ['<rootDir>/test/unit/setup'],
 }

@@ -1,17 +1,46 @@
-import tpl from './index.hbs'
-import headRenderer from '../../components/head/render'
-import headerRenderer from '../../components/index/header/render'
-import mainRenderer from '../../components/index/main/render'
-import footerRenderer from '../../components/index/footer/render'
+const headRenderer = require('../../components/head/render')
+const headerRenderer = require('../../components/index/header/render')
+const mainRenderer = require('../../components/index/main/render')
+const footerRenderer = require('../../components/index/footer/render')
 
-export default props => {
+const getLangProp = require('../../render-utils').getLangProp
+
+module.exports = props => {
   const options = props.htmlWebpackPlugin.options
-  return tpl({
+
+  const tpl = require('./index.ejs')
+
+  const commonComponents = {
     lang: options.lang || 'en',
-    htmlLang: options.lang === 'zh' ? 'zh-cmn-Hans' : 'en',
+    htmlLang: getLangProp(options.lang),
     head: headRenderer(options),
     header: headerRenderer(options),
     main: mainRenderer(options),
     footer: footerRenderer(options),
-  })
+  }
+
+  // put headscripts into <head>, specified in htmlWebpackPlugin config
+  const chunks = props.htmlWebpackPlugin.files.chunks
+  const headScripts = []
+  let cssChunks = []
+  const bodyScripts = []
+  for (const chunk in chunks) {
+    if (!chunks.hasOwnProperty(chunk)) {
+      continue
+    }
+    if (options.headChunks.indexOf(chunk) !== -1) {
+      headScripts.push(chunks[chunk].entry)
+    } else {
+      bodyScripts.push(chunks[chunk].entry)
+    }
+    cssChunks = cssChunks.concat(chunks[chunk].css)
+  }
+
+  return tpl(
+    Object.assign(commonComponents, {
+      headScripts,
+      cssChunks,
+      bodyScripts,
+    }),
+  )
 }

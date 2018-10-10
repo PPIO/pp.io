@@ -5,11 +5,11 @@ const uniq = require('lodash/uniq')
 const pkg = require('../../package')
 
 module.exports = {
-  lang: ['zh', 'en'],
+  lang: ['en', 'zh'],
   dllPlugin: {
     defaults: {
       // 排除的依赖
-      exclude: ['sanitize.css'],
+      exclude: ['sanitize.css', 'smoothscroll-polyfill'],
 
       // 额外的依赖。
       include: [],

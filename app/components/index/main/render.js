@@ -1,4 +1,10 @@
-import tpl from './main.hbs'
-import translation from './translation.json'
+module.exports = options => {
+  const tpl = require('./main.ejs')
 
-export default options => tpl(translation[options.lang])
+  const transData = require('./translation.json')[options.lang]
+
+  return tpl({
+    introText: transData.introText,
+    desText: transData.desText,
+  })
+}

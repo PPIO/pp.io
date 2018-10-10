@@ -1,12 +1,28 @@
-import tpl from './header.hbs'
-import translation from './translation.json'
+module.exports = options => {
+  const tpl = require('./header.ejs')
 
-export default options =>
-  tpl(
-    Object.assign(
+  const transData = require('./translation.json')[options.lang]
+
+  return tpl({
+    lang: options.lang,
+    title: 'PPIO',
+    nav: [
       {
-        title: 'Boilerplate',
+        name: transData.nav.intro,
+        anchor: '#intro',
       },
-      translation[options.lang],
-    ),
-  )
+      {
+        name: transData.nav.install,
+        anchor: '#labs',
+      },
+      {
+        name: transData.nav.usage,
+        anchor: '#join',
+      },
+      {
+        name: transData.nav.support,
+        anchor: '#community',
+      },
+    ],
+  })
+}

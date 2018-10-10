@@ -32,9 +32,7 @@ exports.cssLoaders = function(options) {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
-    const loaders = options.usePostCSS
-      ? [cssLoader, postcssLoader]
-      : [cssLoader]
+    const loaders = [cssLoader, postcssLoader]
 
     if (loader) {
       loaders.push({
@@ -68,7 +66,6 @@ exports.cssLoaders = function(options) {
 exports.styleLoaders = function(options) {
   const output = []
   const loaders = exports.cssLoaders(options)
-
   for (const extension in loaders) {
     const loader = loaders[extension]
     output.push({
@@ -85,7 +82,7 @@ exports.getPagesArr = function() {
     cwd: pagesDir,
     sync: true,
   })
-  return globInstance.found
+  return globInstance.found.map(page => page.split('.')[0])
 }
 
 exports.getPagesDir = function() {

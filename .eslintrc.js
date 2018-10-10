@@ -45,7 +45,7 @@ module.exports = {
       },
     ],
   },
-  plugins: ['prettier', 'flowtype', 'import', 'promise', 'compat'],
+  plugins: ['prettier', 'import', 'promise', 'compat'],
   settings: {
     'import/resolver': {
       webpack: {

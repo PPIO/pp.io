@@ -1,3 +1,4 @@
+'use strict'
 /**
  * webpack dll plugin 配置
  */
@@ -24,6 +25,7 @@ module.exports = {
     new webpack.DllPlugin({
       name: '[name]',
       path: dllConfig.manifestPath,
+      context: __dirname,
     }),
   ],
   performance: {

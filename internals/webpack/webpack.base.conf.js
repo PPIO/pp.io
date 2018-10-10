@@ -15,30 +15,29 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules', 'app'],
-    extensions: ['.js', 'json'],
+    extensions: ['.js', '.json'],
     mainFields: ['browser', 'jsnext:main', 'main'],
     alias: {
-      '~Root': path.resolve(__dirname, 'app/'),
+      '~App': path.resolve(__dirname, 'app/'),
       '~Assets': path.resolve(__dirname, 'app/assets/'),
     },
+  },
+  entry: {
+    picturefill: path.join(
+      process.cwd(),
+      'node_modules/picturefill/dist/picturefill.min.js',
+    ),
   },
   module: {
     rules: [
       {
-        test: /\.hbs$/,
+        test: /\.ejs$/,
         use: {
-          loader: 'handlebars-loader',
-          options: {
-            inlineRequires: /img|font|media/,
-            precompileOptions: {
-              knownHelpersOnly: false,
-            },
-          },
+          loader: 'ejs-loader',
         },
       },
       {
         test: /\.js$/, // Transform all .js files required somewhere with Babel
-        exclude: /(node_modules|dlls)/,
         use: {
           loader: 'babel-loader',
         },
@@ -66,6 +65,8 @@ module.exports = {
               },
               gifsicle: {
                 interlaced: false,
+                optimizationLevel: 3,
+                colors: 64,
               },
               optipng: {
                 optimizationLevel: 7,
@@ -84,7 +85,6 @@ module.exports = {
           {
             loader: 'svg-url-loader',
             options: {
-              // Inline files smaller than 10 kB
               limit: 10 * 1024,
               noquotes: true,
             },
@@ -105,9 +105,9 @@ module.exports = {
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'file-loader',
+        loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 4096,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]'),
         },
       },

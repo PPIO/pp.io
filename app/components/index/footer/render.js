@@ -1,4 +1,6 @@
-import tpl from './footer.hbs'
-import translation from './translation.json'
+const tpl = require('./footer.ejs')
 
-export default options => tpl(translation[options.lang])
+module.exports = () =>
+  tpl({
+    footerText: 'this is footer',
+  })

@@ -9,6 +9,9 @@ function createWebpackMiddleware(compiler, publicPath) {
     publicPath,
     silent: true,
     stats: 'errors-only',
+    // watchOptions: {  // dosn't work
+    //   ignored: [path.resolve(process.cwd(), 'app/**/*.js'), 'node_modules'],
+    // },
   })
 }
 

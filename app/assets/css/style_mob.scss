@@ -1,0 +1,21 @@
+@import "vars";
+@import './style.scss';
+
+body {
+  min-width: unset;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+
+  &.en,
+  &.zh {
+    font-family: "Futura", sans-serif;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+  max-width: none;
+}

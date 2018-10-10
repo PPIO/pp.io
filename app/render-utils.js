@@ -1,11 +1,16 @@
-const langGetter = (lang, translation) => {
-  let pageText = {}
-  if (lang === 'zh') {
-    pageText = translation['zh']
-  } else {
-    pageText = translation['en']
+const getLangProp = optLang => {
+  let htmlLang = ''
+  switch (optLang) {
+    case 'zh':
+      htmlLang = 'zh-cmn-Hans'
+      break
+    case 'en':
+      htmlLang = 'en'
+      break
+    default:
+      htmlLang = 'en'
   }
-  return pageText
+  return htmlLang
 }
 
-export { langGetter }
+module.exports = { getLangProp }

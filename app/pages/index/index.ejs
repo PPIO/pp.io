@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="<%= htmlLang %>">
+<head>
+  <%= head %>
+  <% cssChunks.forEach(function(cssChunk){ %>
+    <link rel="stylesheet" href="<%= cssChunk %>">
+  <% }); %>
+  <% headScripts.forEach(function(headChunk){ %>
+    <script type="text/javascript" src="<%= headChunk %>"></script>
+  <% }); %>
+</head>
+<body class="<%= lang %>">
+  <%= header %>
+  <main>
+    <%= main %>
+  </main>
+  <%= footer %>
+  <% bodyScripts.forEach(function(bodyChunk){ %>
+    <script type="text/javascript" src="<%= bodyChunk %>"></script>
+  <% }); %>
+</body>
+</html>

@@ -1,8 +1,16 @@
 {
   "presets": [
     ["env", {
-      "targets": { "node": 7 },
-      "useBuiltIns": true
+      "modules": false,
+      "useBuiltIns": true,
+      "targets": {
+        "browsers": [
+          "> 0.2%",
+          "ie > 8",
+          "chrome >= 20",
+          "firefox >= 20"
+        ]
+      }
     }],
     "stage-0"
   ],
@@ -14,11 +22,13 @@
       "plugins": [
         "transform-class-properties",
         "transform-es2015-classes",
-        ["flow-runtime", {
-          "assert": true,
-          "annotate": true
-        }]
       ]
     }
-  }
+  },
+  "ignore": [
+    "app/**/render*.js",
+    "app/**/helpers/*.js",
+    "node_modules/*",
+    "dlls/*"
+  ]
 }

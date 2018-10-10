@@ -43,11 +43,11 @@ app/renderer.prod.js
 app/renderer.prod.js.map
 app/style.css
 app/style.css.map
-dist
 dll
 main.js
 main.js.map
 dlls
+dist
 
 .idea
 npm-debug.log.*

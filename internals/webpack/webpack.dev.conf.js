@@ -12,7 +12,7 @@ const utils = require('./utils')
 const baseWebpackConfig = require('./webpack.base.conf')
 const logger = require('../../server/logger')
 
-// export multiple webpack configs to support multi languages
+// export multiple webpack configs to support multiple languages
 const langList = config.lang
 
 /**
@@ -27,73 +27,71 @@ function dependencyHandlers() {
     return []
   }
   const dllConfig = config.dllPlugin.defaults
-  const dllPath = config.dllPlugin.defaults.path
 
-  /**
-   * 如果没有指定 dlls 字段, 使用所有 package.json 中的 dependencies
-   * 需要在 dllConfig.exclude 中排除所有非浏览器端的依赖
-   */
-  if (!dllConfig.dlls) {
-    const manifestPath = dllConfig.manifestPath
+  const manifestPath = dllConfig.manifestPath
 
-    if (!fs.existsSync(manifestPath)) {
-      logger.error('dll manifest 不存在. 请运行 `npm run build:dll`')
-      process.exit(0)
-    }
-
-    return [
-      new webpack.DllReferencePlugin({
-        context: process.cwd(),
-        manifest: require(manifestPath),
-      }),
-    ]
+  if (!fs.existsSync(manifestPath)) {
+    logger.error('dll manifest do not exist. Run `npm run build:dll`')
+    process.exit(0)
   }
 
-  // 如果 dlls 被指定 自动为每一项创建 dllReferencePlugin.
-  const dllManifests = Object.keys(dllConfig.dlls).map(name =>
-    path.join(dllPath, `/${name}.json`),
-  )
-
-  return dllManifests.map(manifestPath => {
-    if (!fs.existsSync(path)) {
-      if (!fs.existsSync(manifestPath)) {
-        logger.error(
-          `以下 webpack DLL manifest 不存在：${path.basename(manifestPath)}`,
-        )
-        logger.error('Please run: npm run build:dll')
-        process.exit(0)
-      }
-    }
-
-    return new webpack.DllReferencePlugin({
+  return [
+    new webpack.DllReferencePlugin({
       context: process.cwd(),
-      manifest: require(manifestPath), // eslint-disable-line global-require
-    })
-  })
+      manifest: require(manifestPath),
+    }),
+  ]
 }
 
 const webpackConfigs = langList.map(lang => {
   // entries
   const pageEntries = {}
   const pagesArr = utils.getPagesArr()
+
   pagesArr.forEach(page => {
     pageEntries[page] = [
-      path.resolve(utils.getPagesDir(), page.split('.')[0]),
+      path.resolve(utils.getPagesDir(), page),
       // in multi-compiler mode, must set 'name' parameter to make sure bundles don't process each other's updates
       `webpack-hot-middleware/client?name=${lang}&reload=true`,
     ]
+
+    const mobEntryPath = path.resolve(utils.getPagesDir(), `${page}_mob.js`)
+    if (fs.existsSync(mobEntryPath)) {
+      // for mobile page
+      pageEntries[`${page}_mob`] = [
+        path.resolve(utils.getPagesDir(), `${page}_mob`),
+        `webpack-hot-middleware/client?name=${lang}_mob&reload=true`,
+      ]
+    }
   })
 
   // HTML webpack plugins
   const pagePlugins = []
   pagesArr.forEach(page => {
     const pageName = page.split('/')[0]
+
     pagePlugins.push(
       new HtmlWebpackPlugin({
         filename: `${lang}/${pageName}.html`,
         template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-        inject: true,
+        chunks: ['picturefill', page],
         lang,
+        isMob: false,
+        inject: false, // handle injection in render.js
+        headChunks: ['picturefill'],
+      }),
+    )
+
+    // for mobile page
+    pagePlugins.push(
+      new HtmlWebpackPlugin({
+        filename: `${lang}/${pageName}_mob.html`,
+        template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
+        chunks: ['picturefill', `${page}_mob`],
+        lang,
+        isMob: true,
+        inject: false,
+        headChunks: ['picturefill'],
       }),
     )
   })
@@ -120,10 +118,6 @@ const webpackConfigs = langList.map(lang => {
 
     entry: {
       ...pageEntries,
-      app: [
-        path.join(process.cwd(), 'app/app.js'),
-        `webpack-hot-middleware/client?name=${lang}&reload=true`,
-      ],
     },
 
     module: {

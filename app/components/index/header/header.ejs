@@ -1,0 +1,12 @@
+<header class="index-header">
+  <div class="container">
+    <h1 class="logo">
+      <%= title %>
+    </h1>
+    <nav>
+      <% nav.forEach(function(navItem){ %>
+        <a href="<%= navItem.anchor %>}}"><%= navItem.name %></a>
+      <% }); %>
+    </nav>
+  </div>
+</header>
