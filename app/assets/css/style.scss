@@ -28,7 +28,6 @@ h3,
 h4 {
   margin: 0;
   font-weight: normal;
-  font-family: $darkFontColor;
   color: $darkFontColor;
 }
 
@@ -39,6 +38,7 @@ button {
   -moz-appearance: none;
   appearance: none;
   outline: none;
+  border: none;
 }
 
 .container {
@@ -56,6 +56,7 @@ button {
   border: 1px solid #fff;
   color: #fff;
   transition: all 0.1s linear;
+  user-select: none;
 
   &:hover {
     color: $fontColor;
@@ -68,7 +69,8 @@ button {
   color: $fontColor;
 
   .container {
-    padding: 44px 0;
+    padding-top: 44px;
+    padding-bottom: 44px;
     border-bottom: 1px solid #ddd;
   }
 

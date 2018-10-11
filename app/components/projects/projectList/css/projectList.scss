@@ -1,0 +1,73 @@
+@import "~Assets/css/vars";
+
+.ppio-projects {
+  padding: 50px 0;
+
+  .container {
+    text-align: justify;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      visibility: hidden;
+    }
+  }
+
+  .project-block {
+    display: inline-block;
+    width: 540px;
+    padding-bottom: 40px;
+
+    .project-cover {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      margin-bottom: 30px;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+
+    .project-title {
+      font-size: 30px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .project-intro {
+      margin-bottom: 24px;
+    }
+
+    .project-dev-link {
+      display: block;
+      width: 190px;
+      height: 56px;
+      line-height: 56px;
+      border: 1px solid $primeColor;
+      color: $primeColor;
+      border-radius: 28px;
+      font-size: 18px;
+      transition: all 0.1s linear;
+
+      &:hover {
+        background-color: $primeColor;
+        color: #fff;
+      }
+
+      &.disabled {
+        border-color: #c3c3c3;
+        color: #c3c3c3;
+        background: transparent;
+        cursor: default;
+      }
+    }
+  }
+}

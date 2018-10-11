@@ -11,12 +11,9 @@ if (md.mobile()) {
       window.location.href = `${href.replace(
         /\/$/,
         '',
-      )}/index_${LANGUAGE}_mob.html` // eslint-disable-line
-    } else {
-      window.location.href = `${href.replace(
-        /\/$/,
-        '',
       )}/index_mob.html` // eslint-disable-line
+    } else {
+      window.location.href = `${href.replace(/\/$/, '')}/index_mob.html` // eslint-disable-line
     }
   }
 }

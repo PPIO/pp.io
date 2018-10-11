@@ -1,0 +1,21 @@
+<div class="ppio-projects">
+  <div class="container">
+    <% projects.forEach(function(project) { %>
+      <div class="project-block">
+        <div class="project-cover">
+          <img
+            src="<%= project.cover %>"
+            srcset="<%= project.cover %> 1x, <%= project.cover2x %> 2x, <%= project.cover3x %> 3x"
+            alt="">
+        </div>
+        <h3 class="project-title"><%= project.title %></h3>
+        <p class="project-intro"><%= project.intro %></p>
+        <a
+          class="ppio-anchor project-dev-link <%= project.disabled ? 'disabled' : '' %>"
+          href="<%= project.disabled ? 'javascript:void(0)' : project.url %>">
+          <%= project.disabled ? 'Coming soon' : 'Development' %>
+        </a>
+      </div>
+    <% }); %>
+  </div>
+</div>

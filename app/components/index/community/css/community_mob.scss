@@ -1,16 +1,32 @@
 @import "community";
 
+$btnHeight: 50px;
+
 .ppio-community {
   p {
     margin: 10px 0;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .community-subscribe {
     width: 100%;
+    font-size: 14px;
+
+    input {
+      height: $btnHeight;
+      border-width: 1px;
+    }
 
     .subscribe-btn {
-      width: 130px;
+      width: 100px;
+      height: $btnHeight;
     }
+  }
+
+  .join-btn {
+    height: $btnHeight;
+    line-height: $btnHeight;
+    border-radius: $btnHeight / 2;
+    font-size: 14px;
   }
 }

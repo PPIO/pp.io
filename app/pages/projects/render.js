@@ -1,9 +1,6 @@
 const headRenderer = require('../../components/common/head/render')
 const headerRenderer = require('../../components/common/header/render')
-const titleRenderer = require('../../components/index/title/render')
-const advantagesRenderer = require('../../components/index/advantages/render')
-const scenarioRenderer = require('../../components/index/scenario/render')
-const communityRenderer = require('../../components/index/community/render')
+const projectListRenderer = require('../../components/projects/projectList/render')
 const footerRenderer = require('../../components/common/footer/render')
 const globalParam = require('../globalParam')
 
@@ -11,7 +8,7 @@ const getLangProp = require('../../render-utils').getLangProp
 
 module.exports = props => {
   const options = props.htmlWebpackPlugin.options
-  options.page = 'index'
+  options.page = 'projects'
 
   options.global = globalParam
 
@@ -22,10 +19,7 @@ module.exports = props => {
     htmlLang: getLangProp(options.lang),
     head: headRenderer(options),
     header: headerRenderer(options),
-    title: titleRenderer(options),
-    advantages: advantagesRenderer(options),
-    scenario: scenarioRenderer(options),
-    community: communityRenderer(options),
+    projects: projectListRenderer(options),
     footer: footerRenderer(options),
   }
 

@@ -4,28 +4,26 @@
 $flagSize: 20px;
 
 .ppio-header {
-  position: fixed;
+  position: absolute;
   height: $mobHeaderHeight;
   line-height: $mobHeaderHeight;
   z-index: 10;
   overflow: visible;
 
   .container {
-    position: fixed;
+    display: block;
     width: 100%;
     height: $mobHeaderHeight;
+    padding: 0;
     z-index: 10;
-    transition: background-color 0.2s linear;
-
-    &.dropdown {
-      background-color: #fff;
-    }
   }
 
   .header-content {
+    position: absolute;
+    width: 100%;
+    padding: 0 20px;
     max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
+    z-index: 10;
   }
 
   .logo {
@@ -70,7 +68,7 @@ $flagSize: 20px;
 
     &.on {
       .bar1 {
-        top: 17px;
+        top: 13px;
         transform: rotate(-45deg) scaleX(1.1);
         transform-origin: 100% 0;
       }
@@ -81,15 +79,11 @@ $flagSize: 20px;
       }
 
       .bar3 {
-        top: 32px;
+        top: 28px;
         transform: rotateZ(45deg) scaleX(2.2);
         transform-origin: 100% 100%;
       }
     }
-  }
-
-  .container.dropdown .nav-handler .handler-bar {
-    background-color: $fontColor;
   }
 
   .nav {
@@ -100,11 +94,11 @@ $flagSize: 20px;
     top: 0;
     left: 0;
     color: #fff;
-    transition: height 0.4s ease;
+    transition: height 0.2s ease;
     overflow: hidden;
     box-sizing: border-box;
     z-index: 0;
-    background-color: #fff;
+    background-color: $primeColor;
 
     &.dropdown {
       height: 100%;
@@ -112,20 +106,45 @@ $flagSize: 20px;
     }
 
     .nav-content {
-      background-color: #fff;
+      margin-top: $mobHeaderHeight;
     }
 
     .nav-item {
       display: block;
+      margin: 0;
       width: 100%;
       height: 72px;
+      padding: 0;
       line-height: 72px;
       font-size: 24px;
       text-align: center;
-      color: $fontColor;
       text-decoration: none;
       opacity: 1;
-      font-weight: bold;
+      font-weight: normal;
+    }
+  }
+}
+
+.ppio-header.header_white {
+  .nav-handler {
+    .handler-bar {
+      background-color: $primeColor;
+    }
+  }
+
+  .nav {
+    background-color: #fff;
+
+    .nav-item {
+      font-weight: normal;
+      opacity: 1;
+      color: $fontColor;
+
+      &.active {
+        span {
+          border-bottom: none;
+        }
+      }
     }
   }
 }

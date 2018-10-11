@@ -1,16 +1,16 @@
 {
   "en": {
-    "title": "Community",
-    "followTitle": "Follow us to witness history",
+    "title": "Follow us",
+    "followTitle": "Subscribe us to witness history",
     "joinTitle": "Join us to make history",
-    "joinUs": "Join us",
-    "subscribeUs": "Subscribe us"
+    "joinUs": "Join our gitter",
+    "subscribe": "Subscribe"
   },
   "zh": {
-    "title": "社区",
-    "followTitle": "Follow us to witness history",
+    "title": "加入我们",
+    "followTitle": "Subscribe us to witness history",
     "joinTitle": "Join us to make history",
-    "joinUs": "Join us",
-    "subscribeUs": "Subscribe us"
+    "joinUs": "Join our gitter",
+    "subscribe": "Subscribe"
   }
 }

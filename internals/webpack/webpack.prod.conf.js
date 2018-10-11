@@ -25,6 +25,7 @@ function recursiveIssuer(m) {
 
 // export multiple webpack configs to support multi languages
 const langList = config.lang
+const isSingleLang = langList.length === 1 // Whether the website only needs one language. In which case we will not add language-info in filenames
 const webpackConfigs = langList.map(lang => {
   const pagesArr = utils.getPagesArr()
   const pagePlugins = []
@@ -57,7 +58,7 @@ const webpackConfigs = langList.map(lang => {
     pagePlugins.push(
       new HtmlWebpackPlugin(
         Object.assign({}, pluginConfig, {
-          filename: `${pageName}_${lang}.html`,
+          filename: `${pageName}${isSingleLang ? '' : `_${lang}`}.html`,
           template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
           chunks: [
             'picturefill',
@@ -79,7 +80,7 @@ const webpackConfigs = langList.map(lang => {
     pagePlugins.push(
       new HtmlWebpackPlugin(
         Object.assign({}, pluginConfig, {
-          filename: `${pageName}_${lang}_mob.html`,
+          filename: `${pageName}${isSingleLang ? '' : `_${lang}`}_mob.html`,
           template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
           chunks: [
             'picturefill',
@@ -139,16 +140,43 @@ const webpackConfigs = langList.map(lang => {
     },
 
     module: {
-      rules: utils.styleLoaders({
-        extract: true,
-        sourceMap: config.build.productionSourceMap,
-      }),
+      rules: utils
+        .styleLoaders({
+          extract: true,
+          sourceMap: config.build.productionSourceMap,
+        })
+        .concat([
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                enabled: false,
+                // NOTE: mozjpeg is disabled as it causes errors in some Linux environments
+                // Try enabling it in your environment by switching the config to:
+                // enabled: true,
+                // progressive: true,
+              },
+              gifsicle: {
+                interlaced: false,
+                optimizationLevel: 3,
+                colors: 64,
+              },
+              optipng: {
+                optimizationLevel: 7,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
+              },
+            },
+          },
+        ]),
     },
 
     output: {
       path: config.build.assetsRoot,
-      filename: `${lang}/${utils.assetsPath('js/[name].[chunkhash].js')}`,
-      chunkFilename: `${lang}/${utils.assetsPath('js/[name].[chunkhash].js')}`,
+      filename: `${isSingleLang ? '' : `${lang}/`}${utils.assetsPath('js/[name].[chunkhash].js')}`,
+      chunkFilename: `${isSingleLang ? '' : `${lang}/`}${utils.assetsPath('js/[name].[chunkhash].js')}`,
     },
 
     optimization: {
@@ -179,10 +207,10 @@ const webpackConfigs = langList.map(lang => {
       }),
       // extract css into its own file
       new MiniCssExtractPlugin({
-        filename: `${lang}/${utils.assetsPath(
+        filename: `${isSingleLang ? '' : `${lang}/`}${utils.assetsPath(
           'css/style-[name].[contentHash].css',
         )}`,
-        chunkFilename: `${lang}/${utils.assetsPath(
+        chunkFilename: `${isSingleLang ? '' : `${lang}/`}${utils.assetsPath(
           'css/style-[name].[contentHash].css',
         )}`,
       }),

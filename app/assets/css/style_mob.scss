@@ -2,6 +2,7 @@
 @import './style.scss';
 
 body {
+  position: relative;
   min-width: unset;
   max-width: 550px;
   margin-left: auto;
@@ -11,12 +12,7 @@ body {
 
 .container {
   width: 100%;
-  padding: 0 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   max-width: none;
-}
-
-.ppio-page-block {
-  .container {
-    padding: 44px 20px;
-  }
 }

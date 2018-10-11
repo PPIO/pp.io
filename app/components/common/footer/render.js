@@ -1,16 +1,13 @@
 const tpl = require('./footer.ejs')
 
-module.exports = () =>
+module.exports = options =>
   tpl({
     title: 'PPIO',
-    copyright: 'Copyright © PPIO Team 2018 PPIO Foundation',
+    copyright: 'Copyright © 2018 PPIO Inc. All Rights Reserved.',
+    theme: options.page === 'index' ? 'default' : 'white',
     social: [
       {
         platform: 'facebook',
-        link: '',
-      },
-      {
-        platform: 'youtube',
         link: '',
       },
       {
@@ -18,11 +15,15 @@ module.exports = () =>
         link: '',
       },
       {
-        platform: 'github',
+        platform: 'youtube',
         link: '',
       },
       {
         platform: 'linkedin',
+        link: 'http://www.linkedin.com/company/ppio/',
+      },
+      {
+        platform: 'github',
         link: '',
       },
     ],

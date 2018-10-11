@@ -1,0 +1,10 @@
+{
+  "en": {
+    "projectTitle_1": "IPFS",
+    "projectIntro_1": "IPFS is a new protocol to decentralize the web. IPFS enables the creation of completely decentralized and distributed applications, using content addressing and digital signatures. <br>IPFS makes the web faster, safer, and more open."
+  },
+  "zh": {
+    "projectTitle_1": "IPFS",
+    "projectIntro_1": "IPFS is a new protocol to decentralize the web. IPFS enables the creation of completely decentralized and distributed applications, using content addressing and digital signatures. <br>IPFS makes the web faster, safer, and more open."
+  }
+}

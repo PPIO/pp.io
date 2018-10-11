@@ -1,5 +1,7 @@
 @import "~Assets/css/vars";
 
+$btnHeight: 60px;
+
 .ppio-community {
   color: #fff;
   text-align: center;
@@ -24,19 +26,28 @@
     margin-left: auto;
     margin-right: auto;
     width: 460px;
-    height: 60px;
-    border-radius: 30px;
+    height: $btnHeight;
+    border-radius: $btnHeight / 2;
     font-size: 18px;
 
     input {
       width: 100%;
-      height: 60px;
-      border-radius: 30px;
+      height: $btnHeight;
+      border-radius: $btnHeight / 2;
       padding-left: 20px;
       text-align: left;
       background: transparent;
       border: 2px solid #fff;
       color: #fff;
+      transition: box-shadow 0.1s linear;
+
+      &:focus {
+        box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    &:hover input {
+      box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
     }
 
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -57,31 +68,67 @@
 
     .subscribe-btn {
       position: absolute;
-      height: 60px;
+      height: $btnHeight;
       width: 155px;
       right: 0;
       top: 0;
       background-color: #fff;
-      color: $fontColor;
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
+      color: $darkFontColor;
+      border-top-right-radius: $btnHeight / 2;
+      border-bottom-right-radius: $btnHeight / 2;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        display: none;
+        background-image: url(../../../../assets/img/loading.svg);
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+        @include loading;
+      }
+
+      &.loading {
+        font-size: 0;
+        cursor: default;
+
+        &::after {
+          display: inline-block;
+        }
+      }
+
+      &.success {
+        font-size: 0;
+        cursor: default;
+
+        &::after {
+          display: inline-block;
+          animation: none;
+          background-image: url(../../../../assets/img/success.svg);
+        }
+      }
     }
+  }
+
+  .community-splitter {
+    font-size: 40px;
+    margin: 10px 0 -15px;
   }
 
   .join-btn {
     display: block;
     width: 252px;
-    height: 60px;
-    line-height: 60px;
+    height: $btnHeight;
+    line-height: $btnHeight;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 30px;
+    border-radius: $btnHeight / 2;
     font-size: 18px;
     background-color: #fff;
-    color: $fontColor;
+    color: $darkFontColor;
 
     &:hover {
-      box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
     }
   }
 }

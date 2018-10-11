@@ -1,0 +1,98 @@
+@import "~Assets/css/vars";
+
+$headerGrid: 30px;
+
+.ppio-header {
+  position: absolute;
+  width: 100%;
+  height: $headerHeight;
+  line-height: $headerHeight;
+  overflow: hidden;
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  z-index: 1000;
+
+  .container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: inline-block;
+    font-size: 0;
+    margin: 0;
+    vertical-align: top;
+
+    .logo-image {
+      display: inline-block;
+      width: 100px;
+      height: 24px;
+      background-image: url(../../../../assets/img/logo_white.png);
+      background-size: contain;
+      background-position: left center;
+      vertical-align: middle;
+    }
+  }
+
+  .nav {
+    user-select: none;
+    font-size: 0;
+    line-height: initial;
+
+    .nav-item {
+      display: inline-block;
+      margin: 0 15px;
+      padding: 15px 0;
+      cursor: pointer;
+      color: #fff;
+      opacity: 0.6;
+      font-size: 16px;
+      line-height: initial;
+      transition: opacity linear 0.1s;
+      text-decoration: none;
+
+      span {
+        padding: 2px 0;
+      }
+
+      &:hover,
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.ppio-header.header_white {
+  position: relative;
+  background-color: #fff;
+  color: $fontColor;
+  border-bottom: 1px solid #eaecef;
+
+  .logo .logo-image {
+    background-image: url(../../../../assets/img/logo.png);
+  }
+
+  .nav .nav-item {
+    color: #2c3e50;
+    opacity: 1;
+    font-weight: 500;
+
+    &:hover,
+    &.active {
+      span {
+        color: $primeColor;
+      }
+    }
+
+    &.active {
+      span {
+        border-bottom: 2px solid $primeColor;
+      }
+    }
+  }
+}

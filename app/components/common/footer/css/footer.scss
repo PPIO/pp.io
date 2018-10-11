@@ -1,6 +1,6 @@
 @import "~Assets/css/vars";
 
-$footerHeight: 84px;
+$footerHeight: 66px;
 $social: "facebook",
   "youtube",
   "twitter",
@@ -14,13 +14,13 @@ $social: "facebook",
   .logo {
     display: inline-block;
     font-size: 0;
-    margin-right: 45px;
+    margin-right: 10px;
     vertical-align: top;
 
     .logo-image {
       display: inline-block;
       width: 80px;
-      height: 30px;
+      height: 20px;
       @include retina-background-image('../img/footer-logo');
       @include general-background-image;
       vertical-align: middle;
@@ -29,11 +29,11 @@ $social: "facebook",
 
   .copyright {
     display: inline-block;
-    border-left: 1px solid #979797;
+    border-left: 1px solid #ddd;
     padding-left: 24px;
     color: rgba(0, 0, 0, 0.4);
-    height: 42px;
-    line-height: 42px;
+    height: 20px;
+    line-height: 20px;
   }
 
   .social {
@@ -62,5 +62,11 @@ $social: "facebook",
         }
       }
     }
+  }
+}
+
+.ppio-footer.footer_white {
+  .container {
+    border-top: 1px solid #ddd;
   }
 }
