@@ -1,0 +1,50 @@
+const headRenderer = require('../../components/common/head/render')
+const headerRenderer = require('../../components/common/header/render')
+const projectListRenderer = require('../../components/projects/projectList/render')
+const footerRenderer = require('../../components/common/footer/render')
+const globalParam = require('../globalParam')
+
+const getLangProp = require('../../render-utils').getLangProp
+
+module.exports = props => {
+  const options = props.htmlWebpackPlugin.options
+  options.page = 'projects'
+
+  options.global = globalParam
+
+  const tpl = require('./index.ejs')
+
+  const commonComponents = {
+    lang: options.lang || 'en',
+    htmlLang: getLangProp(options.lang),
+    head: headRenderer(options),
+    header: headerRenderer(options),
+    projects: projectListRenderer(options),
+    footer: footerRenderer(options),
+  }
+
+  // put headscripts into <head>, specified in htmlWebpackPlugin config
+  const chunks = props.htmlWebpackPlugin.files.chunks
+  const headScripts = []
+  let cssChunks = []
+  const bodyScripts = []
+  for (const chunk in chunks) {
+    if (!chunks.hasOwnProperty(chunk)) {
+      continue
+    }
+    if (options.headChunks.indexOf(chunk) !== -1) {
+      headScripts.push(chunks[chunk].entry)
+    } else {
+      bodyScripts.push(chunks[chunk].entry)
+    }
+    cssChunks = cssChunks.concat(chunks[chunk].css)
+  }
+
+  return tpl(
+    Object.assign(commonComponents, {
+      headScripts,
+      cssChunks,
+      bodyScripts,
+    }),
+  )
+}

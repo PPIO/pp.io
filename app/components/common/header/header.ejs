@@ -1,0 +1,18 @@
+<header class="ppio-header header_<%= theme %>">
+  <div class="container">
+    <h1 class="logo">
+      <%= title %>
+      <a class="top-anchor" href="<%= indexUrl %>"><span class="logo-image"></span></a>
+    </h1>
+    <nav class="nav">
+      <% nav.forEach(function(navItem){ %>
+        <a
+          class="nav-item <%= curPage === navItem.page ? 'active' : '' %>"
+          href="<%= navItem.href %>"
+          target="<%= navItem.page === 'github' || navItem.page === 'blog' ? '_blank' : '_self' %>">
+          <span><%= navItem.name %></span>
+        </a>
+      <% }); %>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+{
+  "en": {
+    "nav": {
+      "guide": "Guide",
+      "api": "API",
+      "blog": "Blog",
+      "projects": "Projects",
+      "github": "Github"
+    }
+  },
+  "zh": {
+    "nav": {
+      "guide": "指南",
+      "api": "Api",
+      "blog": "博客",
+      "projects": "项目",
+      "github": "Github"
+    }
+  }
+}

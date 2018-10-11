@@ -1,0 +1,102 @@
+@import "~sanitize.css";
+@import "./vars";
+
+body {
+  color: $fontColor;
+  font-size: $fontSize;
+  min-width: $contentWidth;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.02em;
+  line-height: 1.42115;
+
+  &.en {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  &.zh {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: normal;
+  color: $darkFontColor;
+}
+
+input,
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.container {
+  width: 100%;
+  max-width: $contentWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ppio-anchor {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all 0.1s linear;
+  user-select: none;
+
+  &:hover {
+    color: $fontColor;
+    background-color: #fff;
+  }
+}
+
+.ppio-page-block {
+  position: relative;
+  color: $fontColor;
+
+  .container {
+    padding-top: 44px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  h3 {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: $blockHeadingSize;
+    text-align: center;
+  }
+
+  h4 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: $blockChildHeadingSize;
+  }
+}
+
+.browse-happy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: rgb(255, 247, 133);
+  color: #202020;
+  z-index: 100000;
+}

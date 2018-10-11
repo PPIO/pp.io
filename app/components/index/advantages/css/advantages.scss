@@ -1,0 +1,46 @@
+@import "~Assets/css/vars";
+
+.ppio-advantages {
+  .advantages-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .advantage-block {
+    display: inline-block;
+    flex: 0 0 320px;
+    text-align: center;
+
+    .advantage-icon-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 156px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    .advantage-icon {
+      vertical-align: middle;
+    }
+
+    &.advantage_affordable,
+    &.advantage_secure {
+      .advantage-icon {
+        width: 105px;
+        height: 119px;
+      }
+    }
+
+    &.advantage_efficient {
+      .advantage-icon {
+        width: 105px;
+        height: 105px;
+      }
+    }
+  }
+}

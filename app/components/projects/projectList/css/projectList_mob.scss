@@ -1,0 +1,28 @@
+@import "./projectList";
+
+.ppio-projects {
+  .container {
+    padding: 0;
+  }
+
+  .project-block {
+    display: block;
+    width: 100%;
+    padding-bottom: 60px;
+
+    .project-title {
+      text-align: center;
+    }
+
+    .project-intro {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .project-dev-link {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import "./footer";
+
+.ppio-footer {
+  height: auto;
+
+  .logo {
+    display: block;
+    line-height: initial;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .copyright {
+    display: block;
+    border-left: 0;
+    padding-left: 0;
+    text-align: center;
+    line-height: initial;
+  }
+
+  .social {
+    float: none;
+    display: block;
+    height: $footerHeight;
+    line-height: $footerHeight;
+    text-align: center;
+  }
+}

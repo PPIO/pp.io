@@ -1,0 +1,194 @@
+$primeColor: #885cff;
+$fontColor: #646464;
+$darkFontColor: #161616;
+$contentWidth: 1100px;
+$fontSize: 14px;
+
+$headerHeight: 60px;
+$mobHeaderHeight: 40px;
+
+$blockHeadingSize: 32px;
+$blockChildHeadingSize: 18px;
+
+/* mixins */
+
+@mixin roundBlock($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size / 2;
+}
+
+@mixin thin-scroll-bar($color: #62a3eb) {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border-radius: 2px;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.2s linear;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+$retina2x: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)";
+$retina3x: "only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx)";
+
+/**
+ * set retina image for high-DPR screen
+ * @param file{String} file path with out extension
+ * @param ext{String} file extension
+ * @param with3x{Boolean} whether to include @3x images
+ */
+@mixin retina-background-image($file, $ext: 'png', $with3x: true) {
+  background-image: url($file + '.' + $ext);
+  @media #{$retina2x} {
+    background-image: url($file + '@2x.' + $ext);
+  }
+
+  @if $with3x {
+    @media #{$retina3x} {
+      background-image: url($file + '@3x.' + $ext);
+    }
+  }
+}
+
+@mixin general-background-image() {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/**
+ * the little triangle for popup panels
+ */
+@mixin triangle($towards, $size, $pos: 0, $withBorder: true, $color: #fff, $borderColor: rgba(26, 26, 26, 0.4)) {
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+  }
+
+  @if $withBorder {
+    &::before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+    }
+  }
+
+  @if $towards == 'bottom' {
+    &::after {
+      border-top: $size solid $color;
+      border-left: $size - 1px solid transparent;
+      border-right: $size - 1px solid transparent;
+      border-bottom: 0;
+      bottom: -$size;
+      left: $pos;
+    }
+
+    @if $withBorder {
+      &::before {
+        border-top: $size solid $borderColor;
+        border-left: $size - 1px solid transparent;
+        border-right: $size - 1px solid transparent;
+        border-bottom: 0;
+        bottom: -$size;
+        left: $pos;
+      }
+    }
+  }
+
+  @if $towards == 'top' {
+    &::after {
+      border-bottom: $size solid $color;
+      border-left: $size - 1px solid transparent;
+      border-right: $size - 1px solid transparent;
+      border-top: 0;
+      top: -$size;
+      left: $pos;
+    }
+
+    @if $withBorder {
+      &::before {
+        border-bottom: $size solid $borderColor;
+        border-left: $size - 1px solid transparent;
+        border-right: $size - 1px solid transparent;
+        border-top: 0;
+        top: -$size;
+        left: $pos;
+      }
+    }
+  }
+
+  @if $towards == 'left' {
+    &::after {
+      border-right: $size solid $color;
+      border-top: $size - 1px solid transparent;
+      border-bottom: $size - 1px solid transparent;
+      border-left: 0;
+      left: -$size;
+      top: $pos;
+    }
+
+    @if $withBorder {
+      &::before {
+        border-right: $size solid $borderColor;
+        border-top: $size - 1px solid transparent;
+        border-bottom: $size - 1px solid transparent;
+        border-left: 0;
+        left: -$size;
+        top: $pos;
+      }
+    }
+  }
+
+  @if $towards == 'right' {
+    &::after {
+      border-left: $size solid $color;
+      border-top: $size - 1px solid transparent;
+      border-bottom: $size - 1px solid transparent;
+      border-right: 0;
+      right: -$size;
+      top: $pos;
+    }
+
+    @if $withBorder {
+      &::before {
+        border-left: $size solid $borderColor;
+        border-top: $size - 1px solid transparent;
+        border-bottom: $size - 1px solid transparent;
+        border-right: 0;
+        right: -$size;
+        top: $pos;
+      }
+    }
+  }
+}
+
+/**
+ * loading animation
+ */
+@mixin loading {
+  @include general-background-image();
+  transform: rotateZ(0);
+  animation: loading-rotate 0.8s linear infinite;
+}
+
+@keyframes loading-rotate {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

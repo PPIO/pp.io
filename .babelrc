@@ -1,0 +1,34 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "useBuiltIns": true,
+      "targets": {
+        "browsers": [
+          "> 0.2%",
+          "ie > 8",
+          "chrome >= 20",
+          "firefox >= 20"
+        ]
+      }
+    }],
+    "stage-0"
+  ],
+  "env": {
+    "production": {
+      "plugins": ["dev-expression"]
+    },
+    "development": {
+      "plugins": [
+        "transform-class-properties",
+        "transform-es2015-classes",
+      ]
+    }
+  },
+  "ignore": [
+    "app/**/render*.js",
+    "app/**/helpers/*.js",
+    "node_modules/*",
+    "dlls/*"
+  ]
+}

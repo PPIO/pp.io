@@ -1,0 +1,54 @@
+@import "~Assets/css/vars";
+
+$titleAreaHeight: 500px;
+$titleNavSize: 22px;
+$titleNavWidth: 185px;
+
+.ppio-title {
+  width: 100%;
+  height: $titleAreaHeight;
+  padding-top: $headerHeight;
+  color: #fff;
+  overflow: hidden;
+  @include retina-background-image('../img/title-bg', 'png', false);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .container {
+    height: 100%;
+    padding-top: 140px;
+    @include retina-background-image('../img/title-bg-deco', 'png', false);
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: center;
+  }
+
+  .title-big-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 170px;
+    z-index: 1;
+  }
+
+  .ppio-big-title {
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+  }
+
+  .ppio-title-btns {
+    margin-top: 70px;
+    text-align: center;
+
+    .title-btn {
+      display: inline-block;
+      width: $titleNavWidth;
+      line-height: 48px;
+      font-size: $titleNavSize;
+      border-radius: 24px;
+    }
+  }
+}

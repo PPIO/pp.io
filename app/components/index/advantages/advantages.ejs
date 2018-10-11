@@ -1,0 +1,19 @@
+<div class="ppio-advantages ppio-page-block" id="advantages">
+  <div class="container">
+    <h3 class="advantages-title"><%= title %></h3>
+    <div class="advantages-content">
+      <% advantages.forEach(function(adv){ %>
+        <div class="advantage-block advantage_<%= adv.name %>">
+          <div class="advantage-icon-wrap">
+            <img class="advantage-icon"
+                 src="<%= adv.icon %>"
+                 srcset="<%= adv.icon %> 1x, <%= adv.icon2x %> 2x, <%= adv.icon3x %> 3x"
+                 alt="">
+          </div>
+          <h4 class="advantage-title"><%= adv.title %></h4>
+          <p class="advantage-intro"><%= adv.intro %></p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
