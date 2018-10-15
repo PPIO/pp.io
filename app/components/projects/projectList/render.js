@@ -15,8 +15,8 @@ module.exports = options => {
         cover3x: require('./img/cover-1@2x.png'),
       },
       {
-        title: transData.projectTitle_1,
-        intro: transData.projectIntro_1,
+        title: transData.projectTitle_2,
+        intro: transData.projectIntro_2,
         url: '',
         disabled: true,
         cover: require('./img/cover-2.png'),
@@ -26,8 +26,8 @@ module.exports = options => {
         cover3x: require('./img/cover-2@2x.png'),
       },
       {
-        title: transData.projectTitle_1,
-        intro: transData.projectIntro_1,
+        title: transData.projectTitle_3,
+        intro: transData.projectIntro_3,
         url: '',
         disabled: true,
         cover: require('./img/cover-3.png'),
@@ -37,8 +37,8 @@ module.exports = options => {
         cover3x: require('./img/cover-3@2x.png'),
       },
       {
-        title: transData.projectTitle_1,
-        intro: transData.projectIntro_1,
+        title: transData.projectTitle_4,
+        intro: transData.projectIntro_4,
         url: '',
         disabled: true,
         cover: require('./img/cover-4.png'),

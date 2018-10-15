@@ -1,6 +1,6 @@
 @import "~Assets/css/vars";
 
-$btnHeight: 60px;
+$btnHeight: 54px;
 
 .ppio-community {
   color: #fff;
@@ -39,7 +39,7 @@ $btnHeight: 60px;
       background: transparent;
       border: 2px solid #fff;
       color: #fff;
-      transition: box-shadow 0.1s linear;
+      transition: box-shadow 0.3s ease;
 
       &:focus {
         box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
@@ -130,6 +130,7 @@ $btnHeight: 60px;
     font-size: 18px;
     background-color: #fff;
     color: $darkFontColor;
+    transition: box-shadow ease 0.3s;
 
     &:hover {
       box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);

@@ -8,23 +8,27 @@ module.exports = options =>
     social: [
       {
         platform: 'facebook',
-        link: '',
+        link: 'https://www.facebook.com/PPIO-178595523020994/',
       },
       {
         platform: 'twitter',
-        link: '',
+        link: 'https://twitter.com/PPLabs_PPIO',
+      },
+      {
+        platform: 'medium',
+        link: 'https://medium.com/@ppio',
       },
       {
         platform: 'youtube',
-        link: '',
+        link: 'https://www.youtube.com/channel/UCFRyuBY-PxoSaFmj5Evs5kQ',
       },
       {
         platform: 'linkedin',
-        link: 'http://www.linkedin.com/company/ppio/',
+        link: 'https://www.linkedin.com/company/ppio/',
       },
       {
         platform: 'github',
-        link: '',
+        link: 'https://github.com/ppio',
       },
     ],
   })
