@@ -2,11 +2,11 @@
   "en": {
     "title": "Advantages",
     "advTitle_aff": "Affordable",
-    "advIntro_aff": "Unable to afford high storage costs? PPIO’s well-designed, shared-economy model based on blockchain rewards can take advantage of the massive amount of idle bandwidth and storage resources to lower prices. and it punishes the misbehaving participants as well.",
+    "advIntro_aff": "Unable to afford high storage costs? PPIO’s well-designed, shared-economy model based on blockchain rewards lowers prices as it takes advantage of the massive amount of bandwidth and storage resources sitting idle on the internet. This model rewards good behaviors and punishes misbehaviors.",
     "advTitle_sec": "Privacy & Security",
-    "advIntro_sec": "PPIO’s decentralized storage network uses unique data partition and encryption algorithms, which ensures that user data can only be indexed and retrieved by the unique private key. The system can also effectively defend against various kinds of network attacks and prevent unauthorized data access.",
-    "advTitle_eff": "High Efficiency & Stability",
-    "advIntro_eff": "PPIO is designed from the ground up to perform efficiently on a global scale, by leveraging the founding team’s experience from running decentralized network with hundreds of millions of users. Also, it is equipped with 4 efficient proofs to maintain the integrity and reliability of its storage network."
+    "advIntro_sec": "PPIO’s decentralized storage network uses unique data partition and encryption algorithms, which ensures that user data can only be indexed and retrieved by a unique private key. The system can also effectively defend against various kinds of network attacks and prevent unauthorized data access.",
+    "advTitle_eff": "Efficiency & Stability",
+    "advIntro_eff": "PPIO is designed from the ground up to perform efficiently on a global scale, by leveraging the founding team’s experience from running decentralized networks with hundreds of millions of users. Also, it is equipped with 4 efficient proofs to maintain the integrity and reliability of its storage network."
   },
   "zh": {
     "title": "优势",
@@ -14,7 +14,7 @@
     "advIntro_aff": "Unable to afford high storage costs? PPIO’s well-designed, shared-economy model based on blockchain rewards can take advantage of the massive amount of idle bandwidth and storage resources to lower prices. and it punishes the misbehaving participants as well.",
     "advTitle_sec": "Privacy & Security",
     "advIntro_sec": "PPIO’s decentralized storage network uses unique data partition and encryption algorithms, which ensures that user data can only be indexed and retrieved by the unique private key. The system can also effectively defend against various kinds of network attacks and prevent unauthorized data access.",
-    "advTitle_eff": "High Efficiency & Stability",
+    "advTitle_eff": "Efficiency & Stability",
     "advIntro_eff": "PPIO is designed from the ground up to perform efficiently on a global scale, by leveraging the founding team’s experience from running decentralized network with hundreds of millions of users. Also, it is equipped with 4 efficient proofs to maintain the integrity and reliability of its storage network."
   }
 }
