@@ -51,10 +51,6 @@ const webpackConfigs = langList.map(lang => {
       },
     }
 
-    if (pageName === 'webgl-test') {
-      return
-    }
-
     pagePlugins.push(
       new HtmlWebpackPlugin(
         Object.assign({}, pluginConfig, {
@@ -151,10 +147,6 @@ const webpackConfigs = langList.map(lang => {
             options: {
               mozjpeg: {
                 enabled: false,
-                // NOTE: mozjpeg is disabled as it causes errors in some Linux environments
-                // Try enabling it in your environment by switching the config to:
-                // enabled: true,
-                // progressive: true,
               },
               gifsicle: {
                 interlaced: false,
@@ -189,7 +181,6 @@ const webpackConfigs = langList.map(lang => {
       sideEffects: true,
       concatenateModules: true,
       splitChunks: {
-        // chunks: 'all',
         cacheGroups: splitChunksGroups,
       },
       runtimeChunk: 'single',
@@ -209,7 +200,6 @@ const webpackConfigs = langList.map(lang => {
         sourceMap: config.build.productionSourceMap,
         parallel: true,
       }),
-      // extract css into its own file
       new MiniCssExtractPlugin({
         filename: `${isSingleLang ? '' : `${lang}/`}${utils.assetsPath(
           'css/style-[name].[contentHash].css',
@@ -218,8 +208,6 @@ const webpackConfigs = langList.map(lang => {
           'css/style-[name].[contentHash].css',
         )}`,
       }),
-      // Compress extracted CSS. We are using this plugin so that possible
-      // duplicated CSS from different components can be deduped.
       new OptimizeCSSPlugin({
         cssProcessorOptions: config.build.productionSourceMap
           ? { safe: true, map: { inline: false } }

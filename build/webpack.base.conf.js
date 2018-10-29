@@ -42,7 +42,7 @@ module.exports = {
         },
       },
       {
-        test: /\.js$/, // Transform all .js files required somewhere with Babel
+        test: /\.js$/,
         use: {
           loader: 'babel-loader',
         },
@@ -53,7 +53,6 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              // Inline files smaller than 10 kB
               limit: 10 * 1024,
               name: utils.assetsPath('img/[name].[hash:7].[ext]'),
             },
@@ -101,6 +100,6 @@ module.exports = {
       },
     }),
   ],
-  target: 'web', // Make web variables accessible to webpack, e.g. window
+  target: 'web',
   performance: {},
 }

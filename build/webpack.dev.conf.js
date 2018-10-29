@@ -10,7 +10,7 @@ const merge = require('webpack-merge')
 const config = require('./config')
 const utils = require('./utils')
 const baseWebpackConfig = require('./webpack.base.conf')
-const logger = require('../../server/logger')
+const logger = require('../server/logger')
 
 // export multiple webpack configs to support multiple languages
 const langList = config.lang
@@ -101,13 +101,13 @@ const webpackConfigs = langList.map(lang => {
     new webpack.DefinePlugin({
       LANGUAGE: JSON.stringify(lang),
     }),
-    new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading
-    new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     ...pagePlugins,
     new CircularDependencyPlugin({
-      exclude: /a\.js|node_modules/, // exclude node_modules
-      failOnError: false, // show a warning when there is a circular dependency
+      exclude: /a\.js|node_modules/,
+      failOnError: false,
     }),
   ])
 
@@ -127,7 +127,6 @@ const webpackConfigs = langList.map(lang => {
       }),
     },
 
-    // Don't use hashes in dev mode for better performance
     output: {
       filename: `${lang}/[name].js`,
     },
@@ -136,7 +135,6 @@ const webpackConfigs = langList.map(lang => {
       minimize: false,
     },
 
-    // cheap-module-eval-source-map is faster for development
     devtool: config.dev.devtool,
 
     plugins: plugins,

@@ -9,9 +9,6 @@ function createWebpackMiddleware(compiler, publicPath) {
     publicPath,
     silent: true,
     stats: 'errors-only',
-    // watchOptions: {  // dosn't work
-    //   ignored: [path.resolve(process.cwd(), 'app/**/*.js'), 'node_modules'],
-    // },
   })
 }
 
@@ -25,8 +22,6 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   app.use(middleware)
   app.use(webpackHotMiddleware(compiler))
 
-  // Since webpackDevMiddleware uses memory-fs internally to store build
-  // artifacts, we use it instead
   const fs = middleware.fileSystem
 
   app.get('*', (req, res) => {

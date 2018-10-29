@@ -1,7 +1,5 @@
 'use strict'
-/**
- * webpack dll plugin 配置
- */
+
 const webpack = require('webpack')
 
 const dllPluginConfig = require('./config').dllPlugin

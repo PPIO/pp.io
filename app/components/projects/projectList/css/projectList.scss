@@ -12,13 +12,23 @@
       width: 100%;
       visibility: hidden;
     }
+
+    @media screen and (max-width: 850px) {
+      text-align: center;
+    }
   }
 
   .project-block {
     display: inline-block;
     vertical-align: top;
-    width: 540px;
+    width: 48%;
     padding-bottom: 30px;
+    text-align: left;
+
+    @media screen and (max-width: 850px) {
+      width: 90%;
+      max-width: 540px;
+    }
 
     .project-cover {
       position: relative;

@@ -49,7 +49,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: './internals/webpack/webpack.prod.conf.js',
+        config: './build/webpack.prod.conf.js',
       },
     },
   },
