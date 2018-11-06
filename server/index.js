@@ -9,21 +9,23 @@ const proxyTable = require('./config').proxyTable
 const argv = require('./argv')
 const setup = require('./middlewares/frontendMiddleware')
 
-// const isDev = process.env.NODE_ENV !== 'production'
 const ngrok =
   process.env.ENABLE_TUNNEL || argv.tunnel ? require('ngrok') : false
 const { resolve } = require('path')
 
 const app = express()
 
-// If you need a backend, e.g. an API, add your custom backend-specific middleware here
-// app.use('/api', myApi);
+// proxy table for api calls
 Object.keys(config.proxyTable).forEach(urlPtrn => {
   app.use(urlPtrn, proxy(proxyTable[urlPtrn]))
 })
 
-// In production we need to pass these values in instead of relying on webpack
-// ignored in development
+// Jump to English version by default
+app.get('/', (req, res) => {
+  console.log('visiting')
+  res.redirect('/en')
+})
+
 setup(app, {
   outputPath: resolve(process.cwd(), 'dist'),
   publicPath: config.assetsPublicPath,

@@ -10,7 +10,7 @@ module.exports = (app, options) => {
     const addProdMiddlewares = require('./addProdMiddlewares')
     addProdMiddlewares(app, options)
   } else {
-    const webpackConfig = require('../../internals/webpack/webpack.dev.conf')
+    const webpackConfig = require('../../build/webpack.dev.conf')
     const addDevMiddlewares = require('./addDevMiddlewares')
     addDevMiddlewares(app, webpackConfig)
   }

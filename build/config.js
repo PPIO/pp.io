@@ -2,7 +2,7 @@
 const path = require('path')
 const pullAll = require('lodash/pullAll')
 const uniq = require('lodash/uniq')
-const pkg = require('../../package')
+const pkg = require('../package')
 
 module.exports = {
   lang: ['en'],

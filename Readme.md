@@ -1,8 +1,39 @@
-# A static html page boilerplate
-Inspired by react-boilerplate, vue-cli, webpack-seed
-## Features
-### components
-### eslint/prettify
-### testing
-### i18n
-## Usage
+# Introduction
+This repository contains the source code of the http://pp.io website.
+
+# Installation
+Node and npm/yarn required
+```
+git clone git@github.com:PPIO/pp.io.git
+cd pp.io
+npm install
+```
+
+# Run
+```
+npm run build:dll
+npm run start
+```
+Then you can preview the site at http://localhost:8080/en, hot module replacement supported.
+
+# Run with public url
+```
+npm run start:tunnel
+```
+Tunnel provided by [ngrok.com](https://ngrok.com/)
+
+# Build static resources
+```
+npm run build
+```
+
+# Production page preview
+```
+npm run start:production
+```
+See it at http://localhost:9000
+
+# Code linting
+```
+npm run lint
+```

@@ -17,7 +17,7 @@ $titleNavWidth: 185px;
 
   .container {
     height: 100%;
-    padding-top: 140px;
+    padding-top: 100px;
     @include retina-background-image('../img/title-bg-deco', 'png', false);
     background-repeat: no-repeat;
     -webkit-background-size: 100% auto;
@@ -29,6 +29,7 @@ $titleNavWidth: 185px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     width: 170px;
     z-index: 1;
   }
