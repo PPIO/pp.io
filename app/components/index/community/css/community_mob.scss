@@ -3,6 +3,8 @@
 $btnHeight: 50px;
 
 .ppio-community {
+  @include retina-background-image('../img/community-bg_mob', 'png');
+
   p {
     margin: 10px 0;
     font-size: 16px;

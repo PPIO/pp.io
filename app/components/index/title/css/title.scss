@@ -25,6 +25,19 @@ $titleNavWidth: 185px;
     background-position: center;
   }
 
+  .title-logo {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    width: 230px;
+    height: 230px;
+    margin-left: -115px;
+    @include retina-background-image('../img/big-logo-bg', 'png', false);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
   .title-big-logo {
     display: block;
     margin-left: auto;

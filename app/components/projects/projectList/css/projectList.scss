@@ -4,7 +4,9 @@
   padding: 50px 0;
 
   .container {
-    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     &::after {
       content: '';
@@ -21,9 +23,11 @@
   .project-block {
     display: inline-block;
     vertical-align: top;
-    width: 48%;
     padding-bottom: 30px;
     text-align: left;
+    flex: 0 0 48%;
+    position: relative;
+    min-height: 480px;
 
     @media screen and (max-width: 850px) {
       width: 90%;
@@ -58,6 +62,8 @@
     }
 
     .project-dev-link {
+      position: absolute;
+      bottom: 30px;
       display: block;
       width: 150px;
       height: 42px;

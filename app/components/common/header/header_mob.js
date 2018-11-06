@@ -11,7 +11,7 @@ export default () => {
     showDropDown(!navHandler.classList.contains('on'))
   })
 
-  document.body.addEventListener('click', e => {
+  document.body.addEventListener('click', () => {
     showDropDown(false)
   })
 
@@ -34,12 +34,12 @@ export default () => {
       navHandler.classList.add('on')
       nav.classList.add('dropdown')
       headerContainer.classList.add('dropdown')
-      document.body.style.overflow = 'hidden'
+      document.body.classList.add('dropdown')
     } else {
       navHandler.classList.remove('on')
       nav.classList.remove('dropdown')
       headerContainer.classList.remove('dropdown')
-      document.body.style.overflow = 'auto'
+      document.body.classList.remove('dropdown')
     }
   }
 }

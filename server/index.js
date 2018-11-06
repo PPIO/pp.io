@@ -21,10 +21,14 @@ Object.keys(config.proxyTable).forEach(urlPtrn => {
 })
 
 // Jump to English version by default
-app.get('/', (req, res) => {
-  console.log('visiting')
-  res.redirect('/en')
-})
+if (process.env.NODE_ENV === 'development') {
+  app.get('/', (req, res) => {
+    res.redirect('/en')
+  })
+  app.get('/projects.html', (req, res) => {
+    res.redirect('/en/projects.html')
+  })
+}
 
 setup(app, {
   outputPath: resolve(process.cwd(), 'dist'),

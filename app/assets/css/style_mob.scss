@@ -1,6 +1,10 @@
 @import "vars";
 @import './style.scss';
 
+html {
+  height: 100%;
+}
+
 body {
   position: relative;
   min-width: unset;

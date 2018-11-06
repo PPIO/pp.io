@@ -16,6 +16,11 @@ $flagSize: 20px;
     height: $mobHeaderHeight;
     padding: 0;
     z-index: 10;
+
+    &.dropdown {
+      position: fixed;
+      top: 0;
+    }
   }
 
   .header-content {

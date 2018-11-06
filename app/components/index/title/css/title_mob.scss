@@ -9,13 +9,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include retina-background-image('../img/title-bg_mob', 'png');
 
   .container {
     padding-top: 0;
     height: auto;
-    @include retina-background-image('../img/big-logo-bg');
-    background-size: 210px 233px;
-    background-position: center;
+    background: none;
   }
 
   .title-big-logo {
