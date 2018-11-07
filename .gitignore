@@ -20,6 +20,7 @@ node_modules
 # App packaged
 dlls
 dist
+imagemin-cache
 
 .idea
 npm-debug.log.*

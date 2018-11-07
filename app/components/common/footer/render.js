@@ -24,7 +24,7 @@ module.exports = options =>
       },
       {
         platform: 'linkedin',
-        link: 'https://www.linkedin.com/company/ppio/',
+        link: 'https://www.linkedin.com/company/pplabs/',
       },
       {
         platform: 'github',

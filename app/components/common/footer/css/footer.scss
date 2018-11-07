@@ -70,4 +70,8 @@ $social: "facebook",
   .container {
     border-top: 1px solid #ddd;
   }
+
+  .logo .logo-image {
+    @include retina-background-image('../img/footer-logo_dark');
+  }
 }

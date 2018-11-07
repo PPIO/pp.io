@@ -8,15 +8,17 @@ export default () => {
 
   subscribeBtn.addEventListener('click', () => {
     if (
-      !emailRegex.test(emailInput.value) ||
       subscribeBtn.classList.contains('loading') ||
       subscribeBtn.classList.contains('success')
     ) {
       return
     }
+    if (!emailRegex.test(emailInput.value)) {
+      return alert('Please enter valid email address!')
+    }
     subscribeBtn.classList.add('loading')
     axios({
-      url: '/blog/subscribe',
+      url: 'https://blog.pp.io/subscribe',
       method: 'POST',
       data: qs.stringify({
         email: emailInput.value,

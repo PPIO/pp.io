@@ -7,6 +7,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const imageminMozjpeg = require('imagemin-mozjpeg')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const merge = require('webpack-merge')
 
 const utils = require('./utils')
@@ -136,33 +139,10 @@ const webpackConfigs = langList.map(lang => {
     },
 
     module: {
-      rules: utils
-        .styleLoaders({
-          extract: true,
-          sourceMap: config.build.productionSourceMap,
-        })
-        .concat([
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                enabled: false,
-              },
-              gifsicle: {
-                interlaced: false,
-                optimizationLevel: 3,
-                colors: 64,
-              },
-              optipng: {
-                optimizationLevel: 7,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-            },
-          },
-        ]),
+      rules: utils.styleLoaders({
+        extract: true,
+        sourceMap: config.build.productionSourceMap,
+      }),
     },
 
     output: {
@@ -218,6 +198,36 @@ const webpackConfigs = langList.map(lang => {
         hashFunction: 'sha256',
         hashDigest: 'hex',
         hashDigestLength: 20,
+      }),
+      // copy all files in /public dir
+      new CopyWebpackPlugin([
+        {
+          from: path.join(process.cwd(), './public'),
+          to: path.join(process.cwd(), './dist'),
+          flatten: true,
+        },
+      ]),
+      // compress images
+      new ImageminPlugin({
+        disable: process.env.NODE_ENV !== 'production', // Disabled during development
+        // speed up optipng with cache
+        // WARNING: Imagemin plugin WILL NOT intelligently clear the cache if you update the options. REMEMBER to clear it.
+        cacheFolder: path.join(process.cwd(), './imagemin-cache'),
+        plugins: [
+          imageminMozjpeg({
+            quality: 80,
+            progressive: true,
+          }),
+        ],
+        gifsicle: {
+          interlaced: false,
+          optimizationLevel: 3,
+          colors: 128,
+        },
+        optipng: {
+          optimizationLevel: 3,
+        },
+        pngquant: null,
       }),
     ],
     performance: {
