@@ -1,6 +1,13 @@
 https://pp.io
+https://pp.io/index_mob.html
+https://pp.io/projects_mob.html
 https://pp.io/projects.html
 https://docs.pp.io/guide
 https://docs.pp.io/api
 https://docs.pp.io/cli
 https://blog.pp.io
+https://blog.pp.io/tag/update-log/
+https://blog.pp.io/tag/technology-sharing/
+https://blog.pp.io/tag/views/
+https://blog.pp.io/tag/ppio/
+https://blog.pp.io/tag/demo/

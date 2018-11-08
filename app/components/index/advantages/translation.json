@@ -2,7 +2,7 @@
   "en": {
     "title": "Advantages",
     "advTitle_aff": "Affordability",
-    "advIntro_aff": "Unable to afford high storage costs? PPIO’s well-designed, shared-economy model based on blockchain rewards lowers prices as it takes advantage of the massive amount of bandwidth and storage resources sitting idle on the internet. This model rewards good behaviors and punishes misbehaviors.",
+    "advIntro_aff": "Unable to afford high storage cost? PPIO significantly cuts the price tag, by making use of the vast amount of bandwidth and storage resources sitting idle on the Internet. The unique design of PPIO’s distributed file system and blockchain-based share economy guarantees the reliability and quality of its storage service.",
     "advTitle_sec": "Privacy & Security",
     "advIntro_sec": "PPIO’s decentralized storage network uses unique data partition and encryption algorithms, which ensures that user data can only be indexed and retrieved by a unique private key. The system can also effectively defend against various kinds of network attacks and prevent unauthorized data access.",
     "advTitle_eff": "Efficiency & Stability",
