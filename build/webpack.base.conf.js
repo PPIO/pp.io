@@ -55,6 +55,10 @@ module.exports = {
             options: {
               limit: 10 * 1024,
               name: utils.assetsPath('img/[name].[hash:7].[ext]'),
+              exclude: [
+                path.join(process.cwd(), './app/assets/img/icons'),
+                path.join(process.cwd(), './app/assets/img/favicon.png'),
+              ],
             },
           },
         ],

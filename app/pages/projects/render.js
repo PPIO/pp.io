@@ -12,6 +12,8 @@ module.exports = props => {
 
   options.global = globalParam
 
+  options.pageurl = 'https://pp.io/projects.html'
+
   const tpl = require('./index.ejs')
 
   const commonComponents = {

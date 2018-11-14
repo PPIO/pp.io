@@ -70,7 +70,7 @@ const webpackConfigs = langList.map(lang => {
           isMob: false,
           inject: false,
           lang,
-          headChunks: ['mob-detect', 'picturefill', 'browsehappy'],
+          headChunks: ['runtime', 'mob-detect', 'picturefill', 'browsehappy'],
         }),
       ),
     )
@@ -90,7 +90,7 @@ const webpackConfigs = langList.map(lang => {
           isMob: true,
           inject: false,
           lang,
-          headChunks: ['picturefill'],
+          headChunks: ['runtime', 'picturefill'],
         }),
       ),
     )
@@ -118,13 +118,17 @@ const webpackConfigs = langList.map(lang => {
 
   splitChunksGroups['vendor'] = {
     name: 'vendor',
-    test: /[\\/]node_modules[\\/]/,
+    test: (module, chunks) =>
+      /[\\/]node_modules[\\/]/.test(module.name) &&
+      !/mobile-detect/.test(module.name),
     chunks: chunk => !/_mob/.test(chunk.name),
     enforce: true,
   }
   splitChunksGroups['vendor_mob'] = {
     name: 'vendor_mob',
-    test: /[\\/]node_modules[\\/]/,
+    test: (module, chunks) =>
+      /[\\/]node_modules[\\/]/.test(module.name) &&
+      !/mobile-detect/.test(module.name),
     chunks: chunk => /_mob/.test(chunk.name),
     enforce: true,
   }

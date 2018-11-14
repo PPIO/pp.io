@@ -15,9 +15,12 @@ module.exports = props => {
 
   options.global = globalParam
 
+  options.pageurl = 'https://pp.io'
+
   const tpl = require('./index.ejs')
 
   const commonComponents = {
+    topImage: require('../../assets/img/icons/icon_192.png'),
     lang: options.lang || 'en',
     htmlLang: getLangProp(options.lang),
     head: headRenderer(options),
