@@ -30,6 +30,30 @@ module.exports = props => {
     scenario: scenarioRenderer(options),
     community: communityRenderer(options),
     footer: footerRenderer(options),
+    prefetchLinks: [
+      {
+        page: 'guide',
+        href: options.global.guideUrl,
+      },
+      {
+        page: 'api',
+        href: options.global.apiUrl,
+      },
+      {
+        page: 'projects',
+        href: options.isMob
+          ? options.global.mobProjectsUrl
+          : options.global.projectsUrl,
+      },
+      {
+        page: 'blog',
+        href: options.global.blogUrl,
+      },
+      {
+        page: 'github',
+        href: options.global.githubUrl,
+      },
+    ],
   }
 
   // put headscripts into <head>, specified in htmlWebpackPlugin config

@@ -12,6 +12,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
+
+  &.dropdown {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 .container {

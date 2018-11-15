@@ -229,7 +229,7 @@ const webpackConfigs = langList.map(lang => {
           colors: 128,
         },
         optipng: {
-          optimizationLevel: 3,
+          optimizationLevel: 6,
         },
         pngquant: null,
       }),

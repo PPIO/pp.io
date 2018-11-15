@@ -3,6 +3,16 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# medium-com: http://ogp.me/ns/fb/medium-com#">
   <%= head %>
   <% cssChunks.forEach(function(cssChunk){ %>
+    <link rel="preload" href="<%= cssChunk %>" as="style">
+  <% }); %>
+  <% headScripts.forEach(function(headChunk){ %>
+    <link rel="preload" href="<%= headChunk %>" as="script">
+  <% }); %>
+  <% prefetchLinks.forEach(function(link){ %>
+    <link rel="prefetch" href="<%= link.href %>">
+  <% }); %>
+
+  <% cssChunks.forEach(function(cssChunk){ %>
     <link rel="stylesheet" href="<%= cssChunk %>">
   <% }); %>
   <% headScripts.forEach(function(headChunk){ %>
