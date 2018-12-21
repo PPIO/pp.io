@@ -49,19 +49,20 @@ $headerGrid: 30px;
       padding: 15px 0;
       cursor: pointer;
       color: #fff;
-      opacity: 0.6;
       font-size: 16px;
       line-height: initial;
-      transition: opacity linear 0.1s;
       text-decoration: none;
 
       span {
         padding: 2px 0;
+        transition: all ease 0.2s;
       }
 
       &:hover,
       &.active {
-        opacity: 1;
+        span {
+          border-bottom: 2px solid #fff;
+        }
       }
     }
   }
@@ -89,6 +90,7 @@ $headerGrid: 30px;
       }
     }
 
+    &:hover,
     &.active {
       span {
         border-bottom: 2px solid $primeColor;
