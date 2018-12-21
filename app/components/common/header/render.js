@@ -9,7 +9,9 @@ module.exports = options => {
     title: 'PPIO',
     curPage: options.page,
     theme: options.page === 'index' ? 'default' : 'white',
-    indexUrl: process.env.NODE_ENV === 'production' ? 'https://pp.io' : '/',
+    indexUrl: options.isMob
+      ? options.global.mobIndexUrl
+      : options.global.indexUrl,
     nav: [
       {
         page: 'guide',
@@ -24,7 +26,9 @@ module.exports = options => {
       {
         page: 'projects',
         name: transData.nav.projects,
-        href: options.global.projectsUrl,
+        href: options.isMob
+          ? options.global.mobProjectsUrl
+          : options.global.projectsUrl,
       },
       {
         page: 'blog',

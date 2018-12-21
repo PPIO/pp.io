@@ -9,7 +9,8 @@
         <a
           class="nav-item <%= curPage === navItem.page ? 'active' : '' %>"
           href="<%= navItem.href %>"
-          target="<%= navItem.page === 'github' || navItem.page === 'blog' ? '_blank' : '_self' %>">
+          target="<%= navItem.page === 'github' || navItem.page === 'blog' ? '_blank' : '_self' %>"
+          rel="<%= navItem.page === 'github' || navItem.page === 'blog' ? 'noopener' : '' %>">
           <span><%= navItem.name %></span>
         </a>
       <% }); %>

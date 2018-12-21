@@ -12,6 +12,8 @@ module.exports = props => {
 
   options.global = globalParam
 
+  options.pageurl = 'https://pp.io/projects.html'
+
   const tpl = require('./index.ejs')
 
   const commonComponents = {
@@ -21,6 +23,30 @@ module.exports = props => {
     header: headerRenderer(options),
     projects: projectListRenderer(options),
     footer: footerRenderer(options),
+    prefetchLinks: [
+      {
+        page: 'guide',
+        href: options.global.guideUrl,
+      },
+      {
+        page: 'api',
+        href: options.global.apiUrl,
+      },
+      {
+        page: 'projects',
+        href: options.isMob
+          ? options.global.mobProjectsUrl
+          : options.global.projectsUrl,
+      },
+      {
+        page: 'blog',
+        href: options.global.blogUrl,
+      },
+      {
+        page: 'github',
+        href: options.global.githubUrl,
+      },
+    ],
   }
 
   // put headscripts into <head>, specified in htmlWebpackPlugin config

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="social">
       <% social.forEach(function(platform){ %>
-        <a class="footer-social-link social_<%= platform.platform %>" target="_blank" href="<%= platform.link %>"><%= platform.platform %></a>
+        <a class="footer-social-link social_<%= platform.platform %>" target="_blank" href="<%= platform.link %>" rel="noopener"><%= platform.platform %></a>
       <% }); %>
     </div>
     <h1 class="logo">

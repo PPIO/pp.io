@@ -7,25 +7,8 @@ export default () => {
   const nav = document.querySelector('.nav')
   const headerContainer = document.querySelector('.ppio-header .container')
 
-  navHandler.addEventListener('click', () => {
-    showDropDown(!navHandler.classList.contains('on'))
-  })
-
-  document.body.addEventListener('click', () => {
-    showDropDown(false)
-  })
-
   navHandler.addEventListener('click', e => {
-    e.stopPropagation()
-  })
-
-  nav.addEventListener('click', e => {
-    if (!e.target.classList.contains('nav-item')) {
-      e.stopPropagation()
-    }
-  })
-
-  headerContainer.addEventListener('click', e => {
+    showDropDown(!navHandler.classList.contains('on'))
     e.stopPropagation()
   })
 
@@ -35,11 +18,21 @@ export default () => {
       nav.classList.add('dropdown')
       headerContainer.classList.add('dropdown')
       document.body.classList.add('dropdown')
+      document.body.addEventListener('touchmove', preventScroll, {
+        passive: false,
+      })
     } else {
       navHandler.classList.remove('on')
       nav.classList.remove('dropdown')
       headerContainer.classList.remove('dropdown')
       document.body.classList.remove('dropdown')
+      document.body.removeEventListener('touchmove', preventScroll, {
+        passive: false,
+      })
     }
+  }
+
+  function preventScroll(e) {
+    e.preventDefault()
   }
 }

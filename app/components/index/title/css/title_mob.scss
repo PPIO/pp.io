@@ -4,12 +4,14 @@
 .ppio-title {
   width: 100%;
   height: 100vh;
+  padding-top: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   @include retina-background-image('../img/title-bg_mob', 'png');
+  background-color: #2bb3df;
 
   .container {
     padding-top: 0;

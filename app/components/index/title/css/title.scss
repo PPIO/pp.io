@@ -10,6 +10,7 @@ $titleNavWidth: 185px;
   padding-top: $headerHeight;
   color: #fff;
   overflow: hidden;
+  background-color: #2bb3df;
   @include retina-background-image('../img/title-bg', 'png', false);
   background-size: cover;
   background-position: center;

@@ -28,6 +28,9 @@ if (process.env.NODE_ENV === 'development') {
   app.get('/projects.html', (req, res) => {
     res.redirect('/en/projects.html')
   })
+  app.get('/index_mob.html', (req, res) => {
+    res.redirect('/en/index_mob.html')
+  })
 }
 
 setup(app, {

@@ -3,7 +3,7 @@
     <div class="header-content">
       <h1 class="logo">
         <%= title %>
-        <a class="top-anchor" href="#"><span class="logo-image"></span></a>
+        <a class="top-anchor" href="<%= indexUrl %>"><span class="logo-image"></span></a>
         <span class="logo-text"></span>
       </h1>
       <span class="nav-handler">
@@ -18,7 +18,8 @@
           <a
             class="nav-item <%= curPage === navItem.page ? 'active' : '' %>"
             href="<%= navItem.href %>"
-            target="<%= navItem.page === 'github' || navItem.page === 'blog' ? '_blank' : '_self' %>">
+            target="<%= navItem.page === 'github' || navItem.page === 'blog' ? '_blank' : '_self' %>"
+            rel="noreferrer">
             <span><%= navItem.name %></span>
           </a>
         <% }); %>
