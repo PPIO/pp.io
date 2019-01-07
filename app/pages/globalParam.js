@@ -4,8 +4,8 @@ module.exports = {
     process.env.NODE_ENV === 'production'
       ? 'https://www.pp.io/index_mob.html'
       : '/index_mob.html',
-  guideUrl: 'https://pp.io/docs/guide/index.html',
-  apiUrl: 'https://pp.io/docs/api/index.html',
+  guideUrl: 'https://www.pp.io/docs/guide/',
+  apiUrl: 'https://www.pp.io/docs/api/',
   blogUrl: 'https://blog.pp.io',
   githubUrl: 'https://github.com/ppio',
   projectsUrl:
