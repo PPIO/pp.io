@@ -1,13 +1,30 @@
 <div class="ppio-title">
   <div class="container">
-    <div class="title-logo"></div>
     <img class="title-big-logo"
       src="<%= bigLogo %>"
       srcset="<%= bigLogo %> 1x, <%= bigLogo2x %> 2x"
-      alt="">
+      alt="ppio">
     <h2 class="ppio-big-title"><%= title %></h2>
     <div class="ppio-title-btns">
       <a class="ppio-anchor title-btn getstarted" href="<%= guideUrl %>"><%= getStarted %></a>
     </div>
+    <p class="tip">as easy as 1, 2, 3</p>
+    <div class="terminal-wrap">
+      <div class="code">
+        <code>
+          <p class="comment"># install</p>
+          <p>$ brew install ppio</p>
+          <p class="comment"># Or apt-get install ppio</p>
+          <br>
+          <p class="comment"># import a file into local space</p>
+          <p>$ ppio import object /home/u/ppio.txt</p>
+          <p>$ Hash of the file is [bc07088e505d35f10e51a1a782db06eb]</p>
+          <br>
+          <p class="comment"># upload a file to PPIO</p>
+          <p>$ ppio put object </p>
+        </code>
+      </div>
+    </div>
+
   </div>
 </div>

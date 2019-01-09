@@ -1,7 +1,5 @@
 module.exports = options => {
-  const tpl = options.isMob
-    ? require('./header_mob.ejs')
-    : require('./header.ejs')
+  const tpl = require('./header.ejs')
 
   const transData = require('./translation.json')[options.lang]
   return tpl({

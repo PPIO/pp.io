@@ -4,14 +4,15 @@
     <div class="advantages-content">
       <% advantages.forEach(function(adv){ %>
         <div class="advantage-block advantage_<%= adv.name %>">
-          <div class="advantage-icon-wrap">
+          <div class="advantage-title-wrap">
             <img class="advantage-icon"
                  src="<%= adv.icon %>"
                  srcset="<%= adv.icon %> 1x, <%= adv.icon2x %> 2x, <%= adv.icon3x %> 3x"
-                 alt="">
+                 alt="<%= adv.name %>">
+            <h4 class="advantage-title"><%= adv.title %></h4>
           </div>
-          <h4 class="advantage-title"><%= adv.title %></h4>
           <p class="advantage-intro"><%= adv.intro %></p>
+          <a href="#" class="more">detail ➡</a>
         </div>
       <% }); %>
     </div>

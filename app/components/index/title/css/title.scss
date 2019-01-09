@@ -1,42 +1,17 @@
 @import "~Assets/css/vars";
 
-$titleAreaHeight: 500px;
 $titleNavSize: 22px;
 $titleNavWidth: 185px;
 
 .ppio-title {
   width: 100%;
-  height: $titleAreaHeight;
-  padding-top: $headerHeight;
   color: #fff;
-  overflow: hidden;
-  background-color: #2bb3df;
-  @include retina-background-image('../img/title-bg', 'png', false);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: $theme-color;
+  padding: $headerHeight 15px 0;
 
   .container {
     height: 100%;
-    padding-top: 100px;
-    @include retina-background-image('../img/title-bg-deco', 'png', false);
-    background-repeat: no-repeat;
-    -webkit-background-size: 100% auto;
-    background-size: 100% auto;
-    background-position: center;
-  }
-
-  .title-logo {
-    position: absolute;
-    left: 50%;
-    top: 100px;
-    width: 230px;
-    height: 230px;
-    margin-left: -115px;
-    @include retina-background-image('../img/big-logo-bg', 'png', false);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    padding-top: 60px;
   }
 
   .title-big-logo {
@@ -52,18 +27,50 @@ $titleNavWidth: 185px;
     text-align: center;
     font-size: 26px;
     color: #fff;
+    max-width: 800px;
+    margin:0 auto;
   }
 
   .ppio-title-btns {
-    margin-top: 70px;
     text-align: center;
-
+    margin-top: 40px;
     .title-btn {
       display: inline-block;
       width: $titleNavWidth;
       line-height: 48px;
       font-size: $titleNavSize;
       border-radius: 24px;
+    }
+  }
+
+  .tip {
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .terminal-wrap {
+    margin: 40px auto -60px;
+    width: 800px;
+    padding-bottom: 40px;
+    max-width: 100%;
+    border-radius: 4px;
+    background-color: #000;
+    box-shadow: 0 3px 12px rgba(37,0,105,.32);
+    .code {
+      padding: 20px;
+      font-size: 16px;
+      code {
+        width: 100%;
+        overflow: auto;
+      }
+      p {
+        line-height: 1.5;
+        margin: 0;
+      }
+      .comment {
+        color: #999;
+      }
     }
   }
 }
