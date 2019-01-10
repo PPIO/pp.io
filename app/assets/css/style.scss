@@ -58,9 +58,7 @@ button {
   color: $theme-color;
   background-color: #fff;
   box-shadow: 0 3px 12px rgba(37,0,105,.32);
-
   &:hover {
-
     transform: translate3d(0, -3px, 0);
   }
 }

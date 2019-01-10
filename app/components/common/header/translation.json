@@ -2,7 +2,7 @@
   "en": {
     "nav": {
       "guide": "Guide",
-      "api": "API",
+      "api": "Docs",
       "blog": "Blog",
       "projects": "Projects",
       "github": "Github"
@@ -11,7 +11,7 @@
   "zh": {
     "nav": {
       "guide": "指南",
-      "api": "Api",
+      "api": "文档",
       "blog": "博客",
       "projects": "项目",
       "github": "Github"

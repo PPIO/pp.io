@@ -10,11 +10,43 @@
         </div>
         <h3 class="project-title"><%= project.title %></h3>
         <p class="project-intro"><%= project.intro %></p>
-        <a
-          class="ppio-anchor project-dev-link <%= project.disabled ? 'disabled' : '' %>"
-          href="<%= project.disabled ? 'javascript:void(0)' : project.url %>">
-          <%= project.disabled ? 'Coming soon' : 'Development' %>
-        </a>
+
+
+          <% if(project.platform){ %>
+            <div class="platform-wrap">
+              <% if(project.platform.iOS){ %>
+                <a class="ppio-anchor platform-btn ios" target="_blank" href="<%= project.platform.iOS %>">
+                  <span>iOS</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.android){ %>
+                <a class="ppio-anchor platform-btn android" target="_blank" href="<%= project.platform.android %>">
+                  <span>Android</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.windows){ %>
+                <a class="ppio-anchor platform-btn windows" target="_blank" href="<%= project.platform.windows %>">
+                  <span>Windows</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.mac){ %>
+                <a class="ppio-anchor platform-btn mac" target="_blank" href="<%= project.platform.mac %>">
+                  <span>Mac Os X</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.explorer){ %>
+                <a class="ppio-anchor platform-btn explorer" target="_blank" href="<%= project.platform.explorer %>">
+                  <span>Explorer</span>
+                </a>
+              <% } %>
+            </div>
+          <% } else { %>
+            <a class="ppio-anchor project-dev-link" href="javascript:void(0)"> Development </a>
+          <% } %>
       </div>
     <% }); %>
   </div>
