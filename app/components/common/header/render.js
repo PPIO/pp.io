@@ -34,6 +34,11 @@ module.exports = options => {
         href: options.global.blogUrl,
       },
       {
+        page: 'forum',
+        name: transData.nav.forum,
+        href: options.global.forumUrl,
+      },
+      {
         page: 'github',
         name: transData.nav.github,
         href: options.global.githubUrl,

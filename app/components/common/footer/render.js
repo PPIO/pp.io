@@ -3,7 +3,7 @@ const tpl = require('./footer.ejs')
 module.exports = options =>
   tpl({
     title: 'PPIO',
-    copyright: 'Copyright © 2018 PPIO Inc. All Rights Reserved.',
+    copyright: `Copyright © ${new Date().getFullYear()} PPIO Inc. All Rights Reserved.`,
     theme: options.page === 'index' ? 'default' : 'white',
     social: [
       {

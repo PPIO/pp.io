@@ -43,6 +43,12 @@
                   <span>Explorer</span>
                 </a>
               <% } %>
+
+              <% if(project.platform.github){ %>
+                <a class="ppio-anchor platform-btn github" target="_blank" href="<%= project.platform.github %>">
+                  <span>Github</span>
+                </a>
+              <% } %>
             </div>
           <% } else { %>
             <a class="ppio-anchor project-dev-link" href="javascript:void(0)"> Development </a>

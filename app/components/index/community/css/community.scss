@@ -133,3 +133,14 @@ $btnHeight: 54px;
     color: $theme-color;
   }
 }
+
+@media (max-width: 400px) {
+  .ppio-community{
+    .community-subscribe {
+      .subscribe-btn {
+        width: 110px;
+        font-size: 16px;
+      }
+    }
+  }
+}

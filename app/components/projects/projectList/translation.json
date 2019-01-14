@@ -1,11 +1,12 @@
 {
   "en": {
     "projectTitle_1": "PPIO Demo Disk",
-    "projectIntro_1": "Private Cloud is a personal private cloud storage application. With PPIO’s distributed storage network, users are able to store files in a decentralized cloud without sacrificing safety and privacy. Private will be offered with affordable price.",
+    "projectIntro_1": "PPIO DEMO Disk is our official DPP based on PPIO. It is a simple personal storage cloud disk that you can use to upload, download and share your files. All operations are decentralized. Since it is running on the test network, don't save your valuable files to it. At the same time, the code of this app is also open source, and the github address is below.",
     "projectPlatform_1": {
       "mac": "https://pp.io",
       "android": "https://pp.io",
-      "windows": "https://pp.io"
+      "windows": "https://pp.io",
+      "github": "https://github.com/ppio/ppio-demo_desktop"
     },
     "projectTitle_2": "Enfi Cloud",
     "projectIntro_2": "SharedDisk is a file-sharing application for groups. By sharing files, group members together build a P2P content sharing and storage network. The application is built on the PPIO’s storage.",
