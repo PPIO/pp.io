@@ -24,3 +24,5 @@ imagemin-cache
 
 .idea
 npm-debug.log.*
+
+.history

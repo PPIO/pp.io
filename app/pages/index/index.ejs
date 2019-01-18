@@ -8,6 +8,9 @@
   <% headScripts.forEach(function(headChunk){ %>
     <link rel="preload" href="<%= headChunk %>" as="script">
   <% }); %>
+  <% bodyScripts.forEach(function(bodyChunk){ %>
+    <link rel="preload" href="<%= bodyChunk %>" as="script">
+  <% }); %>
   <% prefetchLinks.forEach(function(link){ %>
     <link rel="prefetch" href="<%= link.href %>">
   <% }); %>
