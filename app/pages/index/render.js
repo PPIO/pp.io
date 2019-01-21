@@ -1,6 +1,7 @@
 const headRenderer = require('../../components/common/head/render')
 const headerRenderer = require('../../components/common/header/render')
 const titleRenderer = require('../../components/index/title/render')
+const downloadRenderer = require('../../components/index/download/render')
 const advantagesRenderer = require('../../components/index/advantages/render')
 const scenarioRenderer = require('../../components/index/scenario/render')
 const communityRenderer = require('../../components/index/community/render')
@@ -26,6 +27,7 @@ module.exports = props => {
     head: headRenderer(options),
     header: headerRenderer(options),
     title: titleRenderer(options),
+    download: downloadRenderer(options),
     advantages: advantagesRenderer(options),
     scenario: scenarioRenderer(options),
     community: communityRenderer(options),

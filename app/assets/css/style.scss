@@ -57,7 +57,7 @@ button {
   user-select: none;
   color: $theme-color;
   background-color: #fff;
-  box-shadow: 0 3px 12px rgba(37,0,105,.32);
+  box-shadow: 1px 1px 20px rgba(46, 106, 255, 0.2), -1px -1px 20px rgba(46, 106, 255, 0.2);
   &:hover {
     transform: translate3d(0, -3px, 0);
   }
@@ -85,6 +85,10 @@ button {
     margin-bottom: 10px;
     font-size: $blockChildHeadingSize;
   }
+}
+
+a {
+  color: $theme-color;
 }
 
 .browse-happy {

@@ -5,8 +5,8 @@ module.exports = {
   blogUrl: 'https://blog.pp.io',
   forumUrl: 'https://www.reddit.com/r/ppio',
   githubUrl: 'https://github.com/ppio',
-  projectsUrl:
+  downloadUrl:
     process.env.NODE_ENV === 'production'
-      ? 'https://www.pp.io/projects.html'
-      : '/projects.html',
+      ? 'https://www.pp.io/download.html'
+      : '/en/download.html',
 }

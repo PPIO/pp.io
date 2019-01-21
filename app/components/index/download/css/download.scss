@@ -1,0 +1,104 @@
+@import "~Assets/css/vars";
+
+.ppio-download {
+  padding: 100px 20px 0;
+  .container {
+    padding-bottom: 20px;
+  }
+  .ppio-download-nav {
+    width: 900px;
+    margin: 0 auto;
+    max-width: 100%;
+    font-size: 0;
+    .nav-item {
+      display: inline-block;
+      width: 33.3%;
+      font-size: 20px;
+      text-align: center;
+      color: #000;
+      line-height: 60px;
+      height: 60px;
+      margin: 0;
+      border-bottom: 2px solid  rgba($theme-color, 0.2);
+      cursor: pointer;
+      transition: all ease 0.2s;
+      &.active, &:hover{
+        color: $theme-color;
+        border-bottom-color: $theme-color;
+      }
+    }
+  }
+  .ppio-download-content {
+    width: 900px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 20px;
+    .content-item {
+      display: none;
+      &.active {
+        display: block;
+      }
+      .intro {
+        font-size: 1rem;
+        color: #333;
+        margin: 0;
+        line-height: 1.5;
+        a {
+          text-decoration: none;
+          &:hover {
+            text-decoration:underline;
+          }
+        }
+      }
+      .platform-wrap {
+        margin-top: 20px;
+        text-align: center;
+        .platform-btn {
+          display: inline-block;
+          padding: 8px 20px 8px 35px;
+          border-radius: 30px;
+          background-size: 20px 20px;
+          background-position: 12px 10px;
+          background-repeat: no-repeat;
+          margin-right: 20px;
+          margin-bottom: 15px;
+          &.ios {
+            background-image: url(../img/ios.png)
+          }
+          &.android {
+            background-image: url(../img/android.png)
+          }
+          &.mac {
+            background-image: url(../img/mac.png)
+          }
+          &.linux {
+            background-image: url(../img/linux.png)
+          }
+          &.node {
+            background-image: url(../img/node.png)
+          }
+          &.java {
+            background-image: url(../img/java.png)
+          }
+          &.windows {
+            background-image: url(../img/windows.png)
+          }
+          &.explorer {
+            background-image: url(../img/explorer.png)
+          }
+          &.github {
+            background-image: url(../img/github.png)
+          }
+          span {
+            vertical-align: top;
+            display: inline-block;
+            height: 24px;
+            font-size: 1rem;
+            line-height: 24px;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}

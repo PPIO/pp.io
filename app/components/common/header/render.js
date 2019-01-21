@@ -23,10 +23,8 @@ module.exports = options => {
       },
       {
         page: 'projects',
-        name: transData.nav.projects,
-        href: options.isMob
-          ? options.global.mobProjectsUrl
-          : options.global.projectsUrl,
+        name: transData.nav.download,
+        href: options.global.downloadUrl,
       },
       {
         page: 'blog',

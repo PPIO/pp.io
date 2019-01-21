@@ -1,20 +1,18 @@
 {
   "en": {
     "nav": {
-      "guide": "Guide",
       "api": "Docs",
       "blog": "Blog",
-      "projects": "Projects",
+      "download": "Download",
       "forum": "Forum",
       "github": "Github"
     }
   },
   "zh": {
     "nav": {
-      "guide": "指南",
       "api": "文档",
       "blog": "博客",
-      "projects": "项目",
+      "download": "项目",
       "github": "Github"
     }
   }
