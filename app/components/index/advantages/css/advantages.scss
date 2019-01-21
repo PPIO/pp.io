@@ -1,45 +1,84 @@
 @import "~Assets/css/vars";
 
 .ppio-advantages {
+  padding: 0px 20px 0;
   .advantages-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-
   .advantage-block {
     display: inline-block;
-    flex: 0 0 320px;
-    text-align: center;
-
-    .advantage-icon-wrap {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 200px;
-      height: 156px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 10px;
-    }
-
-    .advantage-icon {
-      vertical-align: middle;
-    }
-
-    &.advantage_affordable,
-    &.advantage_secure {
-      .advantage-icon {
-        width: 105px;
-        height: 119px;
+    position: relative;
+    flex: 0 0 380px;
+    border-radius: 4px;
+    padding: 20px 20px 30px;
+    transition: all ease 0.3s;
+    text-decoration: none;
+    border: 1px solid rgba($theme-color,.2);
+    box-shadow: 1px 1px 6px rgba($theme-color,.2);
+    &:hover {
+      transform: translate3d(0, -5px, 0);
+      cursor: pointer;
+      .advantage-title {
+        text-decoration: underline;
       }
     }
-
-    &.advantage_efficient {
+    .advantage-title-wrap {
+      padding-left: 36px;
+      height: 40px;
+      line-height: 40px;
+      position: relative;
       .advantage-icon {
-        width: 105px;
-        height: 105px;
+        position: absolute;
+        height: 30px;
+        top: 5px;
+        left: 0;
+      }
+      .advantage-title {
+        font-size: 1.2rem;
+        color: $theme-color;
+        height: 40px;
+        line-height: 40px;
+        transition: all ease 0.3s;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+    .advantage-intro {
+      font-size: 15px;
+      margin: 10px 0 0;
+      color: $fontColor;
+    }
+    .more {
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      line-height: 20px;
+      height: 20px;
+      text-decoration: none;
+      color: $theme-color;
+      &.none {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .advantages-content {
+    display: block !important;
+    .advantage-block {
+      display: block;
+      margin-bottom: 20px;
+      width: 800px;
+      max-width: 100%;
+      margin: 0 auto 20px;
+      &:last-child{
+        margin-bottom: 0;
       }
     }
   }

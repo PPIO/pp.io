@@ -3,13 +3,13 @@ const tpl = require('./footer.ejs')
 module.exports = options =>
   tpl({
     title: 'PPIO',
-    copyright: 'Copyright © 2018 PPIO Inc. All Rights Reserved.',
+    copyright: `Copyright © ${new Date().getFullYear()} PPIO Inc. All Rights Reserved.`,
     theme: options.page === 'index' ? 'default' : 'white',
     social: [
-      // {
-      //   platform: 'facebook',
-      //   link: 'https://www.facebook.com/PPIO-178595523020994/',
-      // },
+      {
+        platform: 'facebook',
+        link: 'https://www.facebook.com/PPIO-178595523020994/',
+      },
       {
         platform: 'twitter',
         link: 'https://twitter.com/PPLabs_PPIO',

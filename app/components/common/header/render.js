@@ -1,7 +1,5 @@
 module.exports = options => {
-  const tpl = options.isMob
-    ? require('./header_mob.ejs')
-    : require('./header.ejs')
+  const tpl = require('./header.ejs')
 
   const transData = require('./translation.json')[options.lang]
   return tpl({
@@ -25,15 +23,18 @@ module.exports = options => {
       },
       {
         page: 'projects',
-        name: transData.nav.projects,
-        href: options.isMob
-          ? options.global.mobProjectsUrl
-          : options.global.projectsUrl,
+        name: transData.nav.download,
+        href: options.global.downloadUrl,
       },
       {
         page: 'blog',
         name: transData.nav.blog,
         href: options.global.blogUrl,
+      },
+      {
+        page: 'forum',
+        name: transData.nav.forum,
+        href: options.global.forumUrl,
       },
       {
         page: 'github',

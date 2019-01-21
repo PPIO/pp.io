@@ -1,19 +1,12 @@
 module.exports = {
   indexUrl: process.env.NODE_ENV === 'production' ? 'https://www.pp.io' : '/',
-  mobIndexUrl:
-    process.env.NODE_ENV === 'production'
-      ? 'https://www.pp.io/index_mob.html'
-      : '/index_mob.html',
   guideUrl: 'https://www.pp.io/docs/guide/',
-  apiUrl: 'https://www.pp.io/docs/api/',
+  apiUrl: 'https://www.pp.io/docs/',
   blogUrl: 'https://blog.pp.io',
+  forumUrl: 'https://www.reddit.com/r/ppio',
   githubUrl: 'https://github.com/ppio',
-  projectsUrl:
+  downloadUrl:
     process.env.NODE_ENV === 'production'
-      ? 'https://www.pp.io/projects.html'
-      : '/projects.html',
-  mobProjectsUrl:
-    process.env.NODE_ENV === 'production'
-      ? 'https://www.pp.io/projects_mob.html'
-      : '/projects_mob.html',
+      ? 'https://www.pp.io/download.html'
+      : '/en/download.html',
 }

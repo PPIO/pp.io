@@ -2,11 +2,13 @@
   "en": {
     "title": "Advantages",
     "advTitle_aff": "Affordability",
-    "advIntro_aff": "Unable to afford high storage cost? PPIO significantly cuts the price tag, by making use of the vast amount of bandwidth and storage resources sitting idle on the Internet. The unique design of PPIO’s distributed file system and blockchain-based share economy guarantees the reliability and quality of its storage service.",
+    "advIntro_aff": "PPIO significantly cuts the price tag, by making use of the vast amount of bandwidth and storage resources sitting idle on the Internet.",
     "advTitle_sec": "Privacy & Security",
-    "advIntro_sec": "PPIO’s decentralized storage network uses unique data partition and encryption algorithms, which ensures that user data can only be indexed and retrieved by a unique private key. The system can also effectively defend against various kinds of network attacks and prevent unauthorized data access.",
+    "advIntro_sec": "PPIO’s decentralized storage network uses unique data partition and encryption algorithms, which ensures that user data can only be indexed and retrieved by a unique private key. ",
+    "advLink_sec": "https://blog.pp.io/how-ppio-protects-your-data/",
     "advTitle_eff": "Efficiency & Stability",
-    "advIntro_eff": "PPIO is designed from the ground up to perform efficiently on a global scale, by leveraging the founding team’s experience from running decentralized networks with hundreds of millions of users. Also, it is equipped with 4 efficient proofs to maintain the integrity and reliability of its storage network."
+    "advIntro_eff": "PPIO is designed from the ground up to perform efficiently on a global scale, by leveraging the founding team’s experience from running decentralized networks with hundreds of millions of users.",
+    "advLink_eff": "https://blog.pp.io/why-is-the-transfer-speed-of-decentralized-storage-faster/"
   },
   "zh": {
     "title": "优势",

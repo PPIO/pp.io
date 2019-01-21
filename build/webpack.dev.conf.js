@@ -81,19 +81,6 @@ const webpackConfigs = langList.map(lang => {
         headChunks: ['picturefill', 'mob-detect', 'browsehappy'],
       }),
     )
-
-    // for mobile page
-    pagePlugins.push(
-      new HtmlWebpackPlugin({
-        filename: `${lang}/${pageName}_mob.html`,
-        template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-        chunks: ['picturefill', `${page}_mob`],
-        lang,
-        isMob: true,
-        inject: false,
-        headChunks: ['picturefill'],
-      }),
-    )
   })
 
   // merge plugins

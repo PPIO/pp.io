@@ -5,9 +5,8 @@ $btnHeight: 54px;
 .ppio-community {
   color: #fff;
   text-align: center;
-  @include retina-background-image('../img/community-bg', 'png', false);
-  background-size: cover;
-  background-position: center;
+  padding: 0 20px;
+  background-color: $theme-color;
 
   .container {
     border-bottom: 0;
@@ -26,6 +25,7 @@ $btnHeight: 54px;
     margin-left: auto;
     margin-right: auto;
     width: 460px;
+    max-width: 100%;
     height: $btnHeight;
     border-radius: $btnHeight / 2;
     font-size: 18px;
@@ -37,17 +37,18 @@ $btnHeight: 54px;
       padding-left: 20px;
       text-align: left;
       background: transparent;
-      border: 2px solid #fff;
+      border: 1px solid #fff;
       color: #fff;
       transition: box-shadow 0.3s ease;
+      font-family: 'IBM Plex Sans';
 
       &:focus {
-        box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 20px rgba(37,0,105,.32), 0 -3px 20px rgba(37,0,105,.32);
       }
     }
 
     &:hover input {
-      box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 20px rgba(37,0,105,.32), 0 -3px 20px rgba(37,0,105,.32);
     }
 
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -73,7 +74,7 @@ $btnHeight: 54px;
       right: 0;
       top: 0;
       background-color: #fff;
-      color: $darkFontColor;
+      color: $theme-color;
       border-top-right-radius: $btnHeight / 2;
       border-bottom-right-radius: $btnHeight / 2;
       cursor: pointer;
@@ -129,11 +130,17 @@ $btnHeight: 54px;
     border-radius: $btnHeight / 2;
     font-size: 18px;
     background-color: #fff;
-    color: $darkFontColor;
-    transition: box-shadow ease 0.3s;
+    color: $theme-color;
+  }
+}
 
-    &:hover {
-      box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+@media (max-width: 400px) {
+  .ppio-community{
+    .community-subscribe {
+      .subscribe-btn {
+        width: 110px;
+        font-size: 16px;
+      }
     }
   }
 }

@@ -1,5 +1,10 @@
 <header class="ppio-header header_<%= theme %>">
   <div class="container">
+    <span class="nav-handler">
+      <span class="handler-bar bar1"></span>
+      <span class="handler-bar bar2"></span>
+      <span class="handler-bar bar3"></span>
+    </span>
     <h1 class="logo">
       <%= title %>
       <a class="top-anchor" href="<%= indexUrl %>"><span class="logo-image"></span></a>
@@ -9,8 +14,8 @@
         <a
           class="nav-item <%= curPage === navItem.page ? 'active' : '' %>"
           href="<%= navItem.href %>"
-          target="<%= navItem.page === 'github' || navItem.page === 'blog' ? '_blank' : '_self' %>"
-          rel="<%= navItem.page === 'github' ? 'nofollow external noopener' : '' %>">
+          target="<%= navItem.page === 'github' || navItem.page === 'forum' ? '_blank' : '_self' %>"
+          rel="<%= navItem.page === 'github' || navItem.page === 'forum' ? 'nofollow external noopener' : '' %>">
           <span><%= navItem.name %></span>
         </a>
       <% }); %>

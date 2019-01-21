@@ -6,15 +6,73 @@
           <img
             src="<%= project.cover %>"
             srcset="<%= project.cover %> 1x, <%= project.cover2x %> 2x, <%= project.cover3x %> 3x"
-            alt="">
+            alt="<%= project.title %>">
         </div>
         <h3 class="project-title"><%= project.title %></h3>
         <p class="project-intro"><%= project.intro %></p>
-        <a
-          class="ppio-anchor project-dev-link <%= project.disabled ? 'disabled' : '' %>"
-          href="<%= project.disabled ? 'javascript:void(0)' : project.url %>">
-          <%= project.disabled ? 'Coming soon' : 'Development' %>
-        </a>
+
+
+          <% if(project.platform){ %>
+            <div class="platform-wrap">
+              <% if(project.platform.windows){ %>
+                <a class="ppio-anchor platform-btn windows" target="_blank" href="<%= project.platform.windows %>">
+                  <span>Windows</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.mac){ %>
+                <a class="ppio-anchor platform-btn mac" target="_blank" href="<%= project.platform.mac %>">
+                  <span>Mac Os X</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.linux){ %>
+                <a class="ppio-anchor platform-btn linux" target="_blank" href="<%= project.platform.linux %>">
+                  <span>Linux</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.node){ %>
+                <a class="ppio-anchor platform-btn node" target="_blank" href="<%= project.platform.node %>">
+                  <span>Node.js SDk</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.java){ %>
+                <a class="ppio-anchor platform-btn java" target="_blank" href="<%= project.platform.java %>">
+                  <span>Java SDk</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.explorer){ %>
+                <a class="ppio-anchor platform-btn explorer" target="_blank" href="<%= project.platform.explorer %>">
+                  <span>Explorer</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.iOS){ %>
+                <a class="ppio-anchor platform-btn ios" target="_blank" href="<%= project.platform.iOS %>">
+                  <span>iOS</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.android){ %>
+                <a class="ppio-anchor platform-btn android" target="_blank" href="<%= project.platform.android %>">
+                  <span>Android</span>
+                </a>
+              <% } %>
+
+              <% if(project.platform.github){ %>
+                <a class="ppio-anchor platform-btn github" target="_blank" href="<%= project.platform.github %>">
+                  <span>Github</span>
+                </a>
+              <% } %>
+            </div>
+          <% } else { %>
+            <div class="platform-wrap">
+              <a class="ppio-anchor project-dev-link" href="javascript:void(0)"> Development </a>
+            </div>
+          <% } %>
       </div>
     <% }); %>
   </div>

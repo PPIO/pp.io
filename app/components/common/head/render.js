@@ -1,5 +1,5 @@
 module.exports = options => {
-  const tpl = options.isMob ? require('./head_mob.ejs') : require('./head.ejs')
+  const tpl = require('./head.ejs')
   const transData = require('./translation.json')[options.lang]
   return tpl(
     Object.assign(

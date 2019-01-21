@@ -1,13 +1,39 @@
 <div class="ppio-title">
   <div class="container">
-    <div class="title-logo"></div>
     <img class="title-big-logo"
       src="<%= bigLogo %>"
       srcset="<%= bigLogo %> 1x, <%= bigLogo2x %> 2x"
-      alt="">
+      alt="ppio">
     <h2 class="ppio-big-title"><%= title %></h2>
     <div class="ppio-title-btns">
       <a class="ppio-anchor title-btn getstarted" href="<%= guideUrl %>"><%= getStarted %></a>
+    </div>
+
+    <div class="tip-wrap">
+      <p class="tip">As easy as 1,2,3</p>
+      <!--
+      <p class="tip">
+        <span class="text">What`s POSS?</span>
+        <span class="tip-message">
+          POSS stands for PPIO Object Storage Service. POSS provides a Command Line Interface、JSON-RPC api and SDK for storing and fetching data.
+          <a href="https://www.pp.io/docs/" target="_blank" class="more">more</a>
+        </span>
+      </p>
+      -->
+    </div>
+     <div class="terminal-wrap">
+      <div class="code">
+        <code>
+          <p class="comment"># create a bucket</p>
+          <p>$ ./poss create-bucket --bucket=test</p>
+          <br>
+          <p class="comment"># upload a file to POSS</p>
+          <p>$ ./poss put-object --bucket=test --chiprice=100 --key=/test.png  --expires=2019-04-01 --body=/home/u/test.png</p>
+          <br>
+          <p class="comment"># get a file from POSS</p>
+          <p>$ ./poss get-object --bucket=test --key=/test.png --chiprice=100 --outfile=/home/u/test-poss.png</p>
+        </code>
+      </div>
     </div>
   </div>
 </div>

@@ -1,42 +1,18 @@
 @import "~Assets/css/vars";
 
-$titleAreaHeight: 500px;
-$titleNavSize: 22px;
-$titleNavWidth: 185px;
+$titleNavSize: 20px;
+$titleNavWidth: 200px;
 
 .ppio-title {
   width: 100%;
-  height: $titleAreaHeight;
-  padding-top: $headerHeight;
   color: #fff;
-  overflow: hidden;
-  background-color: #2bb3df;
-  @include retina-background-image('../img/title-bg', 'png', false);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: $theme-color;
+  padding: $headerHeight 15px 0;
 
   .container {
     height: 100%;
-    padding-top: 100px;
-    @include retina-background-image('../img/title-bg-deco', 'png', false);
-    background-repeat: no-repeat;
-    -webkit-background-size: 100% auto;
-    background-size: 100% auto;
-    background-position: center;
-  }
-
-  .title-logo {
-    position: absolute;
-    left: 50%;
-    top: 100px;
-    width: 230px;
-    height: 230px;
-    margin-left: -115px;
-    @include retina-background-image('../img/big-logo-bg', 'png', false);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    padding-top: 60px;
+    // padding-bottom: 60px;
   }
 
   .title-big-logo {
@@ -52,18 +28,103 @@ $titleNavWidth: 185px;
     text-align: center;
     font-size: 26px;
     color: #fff;
+    max-width: 900px;
+    font-weight: 300;
+    margin:0 auto;
   }
 
   .ppio-title-btns {
-    margin-top: 70px;
     text-align: center;
-
+    margin-top: 40px;
     .title-btn {
       display: inline-block;
       width: $titleNavWidth;
       line-height: 48px;
       font-size: $titleNavSize;
       border-radius: 24px;
+    }
+  }
+  .tip-wrap {
+    text-align: center;
+    .tip {
+      font-size: 1.1rem;
+      color: #fff;
+      display: inline-block;
+      margin-top: 15px;
+      margin-bottom: 0;
+      position: relative;
+      &:hover {
+        .tip-message {
+          display: block;
+        }
+      }
+    }
+    .text {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .tip-message {
+      display: none;
+      width: 300px;
+      position: absolute;
+      text-align: left;
+      top:36px;
+      left: 50%;
+      margin-left: -150px;
+      padding: 10px 15px 20px 10px;
+      font-size: 15px;
+      color: #000;
+      background-color: #fff;
+      border-radius: 4px;
+      &:before {
+        content: '';
+        width:0px;
+        height:0px;
+        border-bottom: 12px solid #fff;
+        border-right: 12px solid transparent;
+        border-left:12px solid transparent;
+        position: absolute;
+        left: 50%;
+        margin-left: -12px;
+        top: -10px;
+      }
+      .more {
+        color: $theme-color;
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+      }
+    }
+  }
+
+
+  .terminal-wrap {
+    margin: 20px auto -120px;
+    width: 800px;
+    max-width: 100%;
+    border-radius: 4px;
+    background-color: #000;
+    box-shadow: 0 3px 12px rgba(37,0,105,.32);
+    .code {
+      padding: 30px 20px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+          width: 0px;
+          display: none;
+      }
+      code {
+        white-space: nowrap;
+      }
+      p {
+        line-height: 1.5;
+        margin: 0;
+      }
+      .comment {
+        color: #999;
+      }
     }
   }
 }

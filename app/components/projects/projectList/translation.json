@@ -1,16 +1,26 @@
 {
   "en": {
-    "projectTitle_1": "Private Cloud",
-    "projectIntro_1": "Private Cloud is a personal private cloud storage application. With PPIO’s distributed storage network, users are able to store files in a decentralized cloud without sacrificing safety and privacy. Private will be offered with affordable price.",
-    "projectTitle_2": "SharedDisk",
-    "projectIntro_2": "SharedDisk is a file-sharing application for groups. By sharing files, group members together build a P2P content sharing and storage network. The application is built on the PPIO’s storage.",
-    "projectTitle_3": "FileMarket",
-    "projectIntro_3": "FileMarket is an application for file trading. Like Amazon, sellers are able to set price himself. Unlike Amazon, buyers are able to not only search public files but also publish file needs for sellers to bid.",
-    "projectTitle_4": "DataBackup",
-    "projectIntro_4": "DataBackup is data storage application for clients who own massive amount of data, especially for corporate clients. The price will be cheaper than most of the data storage service on the market. We are looking forward to publish it soon."
+    "projectTitle_1": "PPIO Demo App",
+    "projectIntro_1": "Demo app is our official app based on PPIO. It is a simple personal storage cloud disk that you can use to upload, download and share your files. All operations are decentralized. The code of this app is also open source. <a target='_blank' href='https://pp.io/docs/how_to_use_ppio_demo.html'>(Know more about how to use the demo app)</a>",
+    "projectPlatform_1": {
+      "mac": "https://resource.testnet.pp.io/demo/release/macos/0.0.1/ppio-demo.dmg",
+      "android": "https://resource.testnet.pp.io/demo/release/android/0.0.1/ppio-demo.apk",
+      "windows": "https://resource.testnet.pp.io/demo/release/windows-amd64/0.0.1/ppio-demo.exe",
+      "github": "https://github.com/ppio/ppio-demo-desktop"
+    },
+    "projectTitle_2": "POSS CLI",
+    "projectIntro_2": "POSS stands for PPIO Object Storage Service<a target='_blank' href='https://www.pp.io/docs/concept/'>(Know more about POSS)</a>. POSS CLI is the command line interface of POSS. You can use the POSS CLI to complete uploading and downloading of files and so on.<a target='_blank' href='https://www.pp.io/dcos/cli/'>(This is the guide of POSS CLI)</a>",
+    "projectPlatform_2": {
+      "linux": "https://resource.testnet.pp.io/poss/release/linux-amd64/0.4.15/poss",
+      "windows": "https://resource.testnet.pp.io/poss/release/windows-amd64/0.4.15/poss.exe",
+      "mac": "https://resource.testnet.pp.io/poss/release/macos/0.4.15/poss"
+    },
+    "projectTitle_3": "POSS SDK",
+    "projectIntro_3": "We now have only have POSS SDK for Node.js and Android. This PPIO demo app is developed by the POSS SDK<a target='_blank' href='https://www.pp.io/dcos/sdk/'>(This is the guide of POSS SDK)</a>.",
+    "projectPlatform_3": {
+      "node": "https://github.com/ppio/poss-sdk-js",
+      "android": "https://github.com/ppio/poss-sdk-android"
+    }
   },
-  "zh": {
-    "projectTitle_1": "IPFS",
-    "projectIntro_1": "IPFS is a new protocol to decentralize the web. IPFS enables the creation of completely decentralized and distributed applications, using content addressing and digital signatures. <br>IPFS makes the web faster, safer, and more open."
-  }
+  "zh": {}
 }
