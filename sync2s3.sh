@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# build
+npm run build
+
 # sync local files to S3:bucket
 aws s3 sync ./dist s3://pp.io --acl public-read
 

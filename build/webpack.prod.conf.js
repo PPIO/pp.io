@@ -1,7 +1,7 @@
 'use strict'
 
 const path = require('path')
-const fs = require('fs')
+// const fs = require('fs')
 const { HashedModuleIdsPlugin, DefinePlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -61,7 +61,6 @@ const webpackConfigs = langList.map(lang => {
           template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
           chunks: [
             'picturefill',
-            'mob-detect',
             'browsehappy',
             `page/${pageName}`,
             'vendor',
@@ -70,41 +69,41 @@ const webpackConfigs = langList.map(lang => {
           isMob: false,
           inject: false,
           lang,
-          headChunks: ['runtime', 'mob-detect', 'picturefill', 'browsehappy'],
+          headChunks: ['runtime', 'picturefill', 'browsehappy'],
         }),
       ),
     )
 
-    // for mobile page
-    pagePlugins.push(
-      new HtmlWebpackPlugin(
-        Object.assign({}, pluginConfig, {
-          filename: `${pageName}${isSingleLang ? '' : `_${lang}`}_mob.html`,
-          template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-          chunks: [
-            'picturefill',
-            `page/${pageName}_mob`,
-            'vendor_mob',
-            'runtime',
-          ],
-          isMob: true,
-          inject: false,
-          lang,
-          headChunks: ['runtime', 'picturefill'],
-        }),
-      ),
-    )
+    // // for mobile page
+    // pagePlugins.push(
+    //   new HtmlWebpackPlugin(
+    //     Object.assign({}, pluginConfig, {
+    //       filename: `${pageName}${isSingleLang ? '' : `_${lang}`}_mob.html`,
+    //       template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
+    //       chunks: [
+    //         'picturefill',
+    //         `page/${pageName}_mob`,
+    //         'vendor_mob',
+    //         'runtime',
+    //       ],
+    //       isMob: true,
+    //       inject: false,
+    //       lang,
+    //       headChunks: ['runtime', 'picturefill'],
+    //     }),
+    //   ),
+    // )
 
     // entries
     pageEntries[`page/${pageName}`] = path.resolve(utils.getPagesDir(), page)
-    // for mobile page
-    const mobEntryPath = path.resolve(utils.getPagesDir(), `${page}_mob.js`)
-    if (fs.existsSync(mobEntryPath)) {
-      pageEntries[`page/${pageName}_mob`] = path.resolve(
-        utils.getPagesDir(),
-        `${page}_mob`,
-      )
-    }
+    // // for mobile page
+    // const mobEntryPath = path.resolve(utils.getPagesDir(), `${page}_mob.js`)
+    // if (fs.existsSync(mobEntryPath)) {
+    //   pageEntries[`page/${pageName}_mob`] = path.resolve(
+    //     utils.getPagesDir(),
+    //     `${page}_mob`,
+    //   )
+    // }
 
     // cacheGroups
     splitChunksGroups[`style_${pageName}`] = {
@@ -124,14 +123,14 @@ const webpackConfigs = langList.map(lang => {
     chunks: chunk => !/_mob/.test(chunk.name),
     enforce: true,
   }
-  splitChunksGroups['vendor_mob'] = {
-    name: 'vendor_mob',
-    test: (module, chunks) =>
-      /[\\/]node_modules[\\/]/.test(module.name) &&
-      !/mobile-detect/.test(module.name),
-    chunks: chunk => /_mob/.test(chunk.name),
-    enforce: true,
-  }
+  // splitChunksGroups['vendor_mob'] = {
+  //   name: 'vendor_mob',
+  //   test: (module, chunks) =>
+  //     /[\\/]node_modules[\\/]/.test(module.name) &&
+  //     !/mobile-detect/.test(module.name),
+  //   chunks: chunk => /_mob/.test(chunk.name),
+  //   enforce: true,
+  // }
 
   const curConfig = merge(baseWebpackConfig, {
     name: lang,

@@ -1,6 +1,6 @@
 const headRenderer = require('../../components/common/head/render')
 const headerRenderer = require('../../components/common/header/render')
-const projectListRenderer = require('../../components/projects/projectList/render')
+const projectListRenderer = require('../../components/download/projectList/render')
 const footerRenderer = require('../../components/common/footer/render')
 const globalParam = require('../globalParam')
 
