@@ -1,73 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset>
 <url>
-  <loc>https://pp.io/</loc>
-  <lastmod>2018-12-25T03:41:55+00:00</lastmod>
+  <loc>https://www.pp.io/</loc>
+  <lastmod>2019-01-22T10:14:33+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/index.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/guide/</loc>
+  <lastmod>2019-01-22T12:50:03+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/api/index.html</loc>
-  <lastmod>2018-12-25T03:33:31+00:00</lastmod>
+  <loc>https://www.pp.io/docs/</loc>
+  <lastmod>2019-01-22T12:50:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/cli/index.html</loc>
-  <lastmod>2018-12-25T03:33:31+00:00</lastmod>
+  <loc>https://www.pp.io/download.html</loc>
+  <lastmod>2019-01-22T10:14:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://pp.io/projects.html</loc>
-  <lastmod>2018-12-25T03:41:58+00:00</lastmod>
+  <loc>https://www.pp.io/docs/guide/System_Design.html</loc>
+  <lastmod>2019-01-22T12:50:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/System_Design.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/guide/P2P_Network.html</loc>
+  <lastmod>2019-01-22T12:50:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/P2P_Network.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/guide/Four_Proof_Algorithms.html</loc>
+  <lastmod>2019-01-22T12:50:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/Four_Proof_Algorithms.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/guide/Five_Kinds_of_Attacks.html</loc>
+  <lastmod>2019-01-22T12:50:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/Five_Kinds_of_Attacks.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/guide/Architecture.html</loc>
+  <lastmod>2019-01-22T12:50:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/Architecture.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/guide/others/About_PPLabs.html</loc>
+  <lastmod>2019-01-22T12:50:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/Command_Line_Tool.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/guide/others/Why_Do_Want_To_Design_PPIO.html</loc>
+  <lastmod>2019-01-22T12:50:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/PPIO_SDK.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/sdk/</loc>
+  <lastmod>2019-01-22T12:50:05+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/others/About_PPLabs.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/cli/</loc>
+  <lastmod>2019-01-22T12:49:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://pp.io/docs/guide/others/Why_Do_Want_To_Design_PPIO.html</loc>
-  <lastmod>2018-12-25T03:33:36+00:00</lastmod>
+  <loc>https://www.pp.io/docs/wallet/</loc>
+  <lastmod>2019-01-22T12:50:05+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.pp.io/docs/concept/</loc>
+  <lastmod>2019-01-22T12:49:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.pp.io/docs/api/</loc>
+  <lastmod>2019-01-22T12:49:56+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.pp.io/docs/tutorial/</loc>
+  <lastmod>2019-01-22T12:50:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.pp.io/docs/sdk/Nodejs.html</loc>
+  <lastmod>2019-01-22T12:50:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.pp.io/docs/sdk/Android.html</loc>
+  <lastmod>2019-01-22T12:50:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.pp.io/docs/how_to_use_ppio_cli.html</loc>
+  <lastmod>2019-01-22T12:50:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.pp.io/docs/how_to_use_ppio_demo.html</loc>
+  <lastmod>2019-01-22T12:50:04+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 </urlset>
