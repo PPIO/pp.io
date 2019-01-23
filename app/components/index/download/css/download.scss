@@ -35,6 +35,9 @@
     padding: 20px;
     .content-item {
       display: none;
+      .version-wrap {
+        text-align: center;
+      }
       &.active {
         display: block;
       }
