@@ -4,6 +4,7 @@
     "projectIntro_1": "Demo app is our official app based on PPIO. It is a simple personal cloud storage app that you can use to upload, download and share your files. All operations are decentralized. The code of this app is also open source. <a target='_blank' href='https://pp.io/docs/how_to_use_ppio_demo.html'>(Know more about how to use the demo app)</a>",
     "projectPlatform_1": {
       "mac": "https://resource.testnet.pp.io/demo/release/macos/latest/ppio-demo.dmg",
+      "windows": "https://resource.testnet.pp.io/demo/release/windows-amd64/latest/ppio-demo.exe",
       "github": "https://github.com/ppio/ppio-demo-desktop"
     },
     "projectTitle_2": "PPIO CLI",
@@ -14,10 +15,9 @@
       "mac": "https://resource.testnet.pp.io/poss/release/macos/latest/poss"
     },
     "projectTitle_3": "PPIO SDK",
-    "projectIntro_3": "We now have only have PPIO SDK for Node.js and Android. This PPIO demo app is developed by the PPIO SDK<a target='_blank' href='https://www.pp.io/docs/sdk/'>(This is the guide of PPIO SDK)</a>.",
+    "projectIntro_3": "We now only have PPIO SDK for Node.js and Android. This PPIO demo app is developed by the PPIO SDK<a target='_blank' href='https://www.pp.io/docs/sdk/'>(This is the guide of PPIO SDK)</a>.",
     "projectPlatform_3": {
-      "node": "https://github.com/ppio/poss-sdk-js",
-      "android": "https://github.com/ppio/poss-sdk-android"
+      "node": "https://github.com/ppio/ppio-sdk-js"
     }
   },
   "zh": {}

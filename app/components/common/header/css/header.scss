@@ -1,15 +1,14 @@
 @import "~Assets/css/vars";
 
 .ppio-header {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: $headerHeight;
   line-height: $headerHeight;
   overflow: hidden;
-  background-color: transparent;
+  background-color: $theme-color;
   color: #fff;
   font-size: 16px;
-  z-index: 1000;
 
   .container {
     max-width: 1200px;
