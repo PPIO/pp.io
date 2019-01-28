@@ -3,7 +3,7 @@
     <h3 class="advantages-title"><%= title %></h3>
     <div class="advantages-content">
       <% advantages.forEach(function(adv){ %>
-        <a href="<%= adv.link ? adv.link : 'javascript:void(0)' %>" class="advantage-block" target="_blank">
+        <a href="<%= adv.link ? adv.link : 'javascript:void(0)' %>" data-type="<%= adv.title %>" class="advantage-block" target="_blank">
           <div class="advantage_<%= adv.name %>">
             <div class="advantage-title-wrap">
               <img class="advantage-icon"

@@ -1,7 +1,15 @@
 <div class="ppio-projects">
   <div class="container">
     <% projects.forEach(function(project) { %>
+      <% if(project.title === "PPIO Demo App"){ %>
+        <div class="project-block" name="demo" id="demo">
+    <% } else if (project.title === "PPIO CLI") { %>
+      <div class="project-block" name="cli" id="cli">
+    <% } else if (project.title === "PPIO SDK") { %>
+      <div class="project-block" name="sdk" id="sdk">
+    <% } else { %>
       <div class="project-block">
+    <% } %>
         <div class="project-cover">
           <img
             src="<%= project.cover %>"
@@ -22,7 +30,7 @@
 
               <% if(project.platform.mac){ %>
                 <a class="ppio-anchor platform-btn mac" target="_blank" href="<%= project.platform.mac %>">
-                  <span>Mac Os X</span>
+                  <span>macOS</span>
                 </a>
               <% } %>
 
@@ -34,13 +42,13 @@
 
               <% if(project.platform.node){ %>
                 <a class="ppio-anchor platform-btn node" target="_blank" href="<%= project.platform.node %>">
-                  <span>Node.js SDk</span>
+                  <span>Node.js SDK</span>
                 </a>
               <% } %>
 
               <% if(project.platform.java){ %>
                 <a class="ppio-anchor platform-btn java" target="_blank" href="<%= project.platform.java %>">
-                  <span>Java SDk</span>
+                  <span>Java SDK</span>
                 </a>
               <% } %>
 

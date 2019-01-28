@@ -15,6 +15,7 @@ import '../../components/index/community/css/community.scss'
 import subscribe from '../../components/index/community/subscribe'
 import menu from '../../components/common/header/menu'
 import nav from '../../components/index/download/nav'
+import analytics from './analytics'
 
 import '../../components/common/footer/css/footer.scss'
 
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
   subscribe()
   menu()
   nav()
+  analytics()
 })
