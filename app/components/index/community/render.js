@@ -8,7 +8,6 @@ module.exports = options => {
     joinTitle: transData.joinTitle,
     joinUs: transData.joinUs,
     subscribe: transData.subscribe,
-    joinLink:
-      'https://gitter.im/PPIO/chat?utm_source=share-link&utm_medium=link&utm_campaign=share-link',
+    joinLink: 'https://discord.gg/8SR7cqt',
   })
 }

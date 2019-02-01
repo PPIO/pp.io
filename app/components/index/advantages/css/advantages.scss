@@ -10,7 +10,7 @@
   .advantage-block {
     display: inline-block;
     position: relative;
-    flex: 0 0 380px;
+    flex: 0 0 32%;
     border-radius: 4px;
     padding: 20px 20px 30px;
     transition: all ease 0.3s;
@@ -68,7 +68,7 @@
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1000px) {
   .advantages-content {
     display: block !important;
     .advantage-block {
