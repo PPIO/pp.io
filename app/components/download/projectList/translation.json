@@ -5,6 +5,7 @@
     "projectPlatform_1": {
       "mac": "https://resource.testnet.pp.io/demo/release/macos/latest/ppio-demo.dmg",
       "windows": "https://resource.testnet.pp.io/demo/release/windows-amd64/latest/ppio-demo.exe",
+      "android": "https://resource.testnet.pp.io/demo/release/android/latest/ppio-demo.apk",
       "github": "https://github.com/ppio/ppio-demo-desktop"
     },
     "projectTitle_2": "PPIO CLI",
