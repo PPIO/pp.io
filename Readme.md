@@ -1,5 +1,5 @@
 # Introduction
-This repository contains the source code of the http://pp.io website.
+This repository contains the source code of the http://pp.io.
 
 # Installation
 Node and npm/yarn required
@@ -14,7 +14,7 @@ npm install
 npm run build:dll
 npm run start
 ```
-Then you can preview the site at http://localhost:8080/en, hot module replacement supported.
+Then you can preview the site at http://localhost:8080/, hot module replacement supported.
 
 # Run with public url
 ```

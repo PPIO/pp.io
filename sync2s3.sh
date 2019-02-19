@@ -6,6 +6,9 @@ npm run build
 # copy index.html to index_mob.html
 cp dist/index.html dist/index_mob.html
 
+# delete all .DS_Store file
+find . -name '.DS_Store' -type f -delete
+
 # sync local files to S3:bucket
 aws s3 sync ./dist s3://pp.io2 --acl public-read
 
