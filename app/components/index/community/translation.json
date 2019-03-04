@@ -1,9 +1,9 @@
 {
   "en": {
-    "title": "Follow us",
-    "followTitle": "Subscribe us to witness history",
-    "joinTitle": "Join us to make history",
-    "joinUs": "Join our discord",
+    "title": "Stay in Touch",
+    "followTitle": "Be the first to hear when we're live",
+    "joinTitle": "Chat with the team on Discord",
+    "joinUs": "Join Our Discord",
     "subscribe": "Subscribe"
   },
   "zh": {
@@ -11,6 +11,6 @@
     "followTitle": "Subscribe us to witness history",
     "joinTitle": "Join us to make history",
     "joinUs": "Join our discord",
-    "subscribe": "Subscribe"
+    "subscribe": "Email Subscribe"
   }
 }

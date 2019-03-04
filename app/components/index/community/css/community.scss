@@ -122,13 +122,13 @@ $btnHeight: 54px;
 
   .join-btn {
     display: block;
-    width: 252px;
+    width: 280px;
     height: $btnHeight;
     line-height: $btnHeight;
     margin-left: auto;
     margin-right: auto;
-    border-radius: $btnHeight / 2;
-    font-size: 18px;
+    border-radius: $btnHeight / 2 +5;
+    font-size: 20px;
     background-color: #fff;
     color: $theme-color;
   }
