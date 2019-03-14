@@ -1,11 +1,17 @@
 /*
  * add menu animation for mobile
  */
+/* global gtag_report_conversion */
 
 export default () => {
   const navHandler = document.querySelector('.nav-handler')
   const nav = document.querySelector('.nav')
   const headerContainer = document.querySelector('.ppio-header .container')
+  const discordBtn = document.querySelector('#nav-discord')
+
+  discordBtn.addEventListener('click', () => {
+    gtag_report_conversion('https://discord.gg/8SR7cqt')
+  })
 
   navHandler.addEventListener('click', e => {
     showDropDown(!navHandler.classList.contains('on'))

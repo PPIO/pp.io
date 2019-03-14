@@ -11,13 +11,23 @@
     </h1>
     <nav class="nav">
       <% nav.forEach(function(navItem){ %>
-        <a
-          class="nav-item <%= curPage === navItem.page ? 'active' : '' %>"
-          href="<%= navItem.href %>"
-          target="<%= navItem.page === 'github' || navItem.page === 'forum' ? '_blank' : '_self' %>"
-          rel="<%= navItem.page === 'github' || navItem.page === 'forum' ? 'nofollow external noopener' : '' %>">
-          <span><%= navItem.name %></span>
-        </a>
+        <% if(navItem.page === 'forum'){ %>
+          <a
+            id="nav-discord"
+            class="nav-item"
+            href="javascript:void(0);"
+            rel="nofollow external noopener">
+            <span><%= navItem.name %></span>
+          </a>
+        <% } else { %>
+          <a
+            class="nav-item <%= curPage === navItem.page ? 'active' : '' %>"
+            href="<%= navItem.href %>"
+            target="<%= navItem.page === 'github' || navItem.page === 'forum' ? '_blank' : '_self' %>"
+            rel="<%= navItem.page === 'github' || navItem.page === 'forum' ? 'nofollow external noopener' : '' %>">
+            <span><%= navItem.name %></span>
+          </a>
+        <% } %>
       <% }); %>
     </nav>
   </div>
