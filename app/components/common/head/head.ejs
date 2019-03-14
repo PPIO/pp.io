@@ -68,8 +68,26 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-128641089-1');
+  gtag('config', 'AW-768911138');
 </script>
-
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      // window.location = url;
+      var a = document.createElement('a')
+      a.target = "_blank"
+      a.href = url
+      a.click()
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-768911138/wtNyCJPB1pYBEKLO0u4C',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 <!-- Google Event Analytics -->
 <script>
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

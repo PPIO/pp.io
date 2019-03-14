@@ -3,7 +3,7 @@
     "title": "Advantages",
     "advTitle_aff": "Affordability",
     "advIntro_aff": "PPIO significantly cuts the price tag, by making use of the vast amount of bandwidth and storage resources sitting idle on the Internet.",
-    "advLink_sec": "https://blog.pp.io/why-ppio-can-achieve-a-lower-price-than-cloud-services-like-aws/",
+    "advLink_aff": "https://blog.pp.io/why-ppio-can-achieve-a-lower-price-than-cloud-services-like-aws/",
     "advTitle_sec": "Privacy & Security",
     "advIntro_sec": "PPIO’s decentralized storage network uses unique data partition and encryption algorithms, which ensures that user data can only be indexed and retrieved by a unique private key. ",
     "advLink_sec": "https://blog.pp.io/how-ppio-protects-your-data/",

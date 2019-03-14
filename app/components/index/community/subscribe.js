@@ -1,10 +1,16 @@
+/* global gtag_report_conversion */
 import axios from 'axios'
 import qs from 'qs'
 
 export default () => {
+  const joinBtn = document.querySelector('#join-btn')
   const subscribeBtn = document.querySelector('.subscribe-btn')
   const emailInput = document.querySelector('#subscribe-email')
   const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ // eslint-disable-line
+
+  joinBtn.addEventListener('click', () => {
+    gtag_report_conversion('https://discord.gg/8SR7cqt')
+  })
 
   subscribeBtn.addEventListener('click', () => {
     if (
