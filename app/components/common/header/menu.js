@@ -1,7 +1,7 @@
 /*
  * add menu animation for mobile
  */
-/* global gtag_report_conversion */
+/* global gtag_report_conversion, fbq */
 
 export default () => {
   const navHandler = document.querySelector('.nav-handler')
@@ -10,6 +10,7 @@ export default () => {
   const discordBtn = document.querySelector('#nav-discord')
 
   discordBtn.addEventListener('click', () => {
+    fbq('track', 'StartTrial')
     gtag_report_conversion('https://discord.gg/8SR7cqt')
   })
 

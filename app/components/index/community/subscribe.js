@@ -1,4 +1,4 @@
-/* global gtag_report_conversion */
+/* global gtag_report_conversion, fbq */
 import axios from 'axios'
 import qs from 'qs'
 
@@ -9,6 +9,7 @@ export default () => {
   const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ // eslint-disable-line
 
   joinBtn.addEventListener('click', () => {
+    fbq('track', 'StartTrial')
     gtag_report_conversion('https://discord.gg/8SR7cqt')
   })
 
