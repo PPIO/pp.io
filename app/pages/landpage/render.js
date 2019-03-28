@@ -8,7 +8,7 @@ const getLangProp = require('../../render-utils').getLangProp
 
 module.exports = props => {
   const options = props.htmlWebpackPlugin.options
-  options.page = 'landpage'
+  options.page = 'index'
 
   options.global = globalParam
 

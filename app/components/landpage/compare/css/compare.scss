@@ -1,22 +1,32 @@
+.ppio-compare {
+ background-color: #2E6AFF;
+ padding: 30px 0;
+}
 .article {
   max-width: 1000px;
+  padding: 40px 80px;
   margin: auto;
-  font-size: 16px;
-  color: #333;
-  line-height: 1.5;
-  word-spacing: 1px;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.4;
+  font-family: monospace;
+  background-color: #000;
+  border-radius: 4px;
   .em {
     font-weight: bold;
+    color: #4068ce;
   }
   .title {
     text-align: center;
+    color: #fff;
+    color: #4068ce;
   }
   h1 {
-    margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
   }
   h2 {
+    text-align: left;
     margin-bottom: 10px;
     margin-top: 10px;
     font-weight: bold;
@@ -29,9 +39,9 @@
       padding: 10px;
     }
     thead {
-      background-color: #eee;
       font-size: 17px;
       font-weight: bold;
+      color: #88a4ea;
     }
     tr{
       td {
@@ -40,15 +50,15 @@
       }
       td:first-child {
         width: 20%;
-        background-color: #eee;
         font-size: 16px;
         font-weight: bold;
+        color: #88a4ea;
       }
     }
   }
   .button-wrap {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
   }
   .title-btn {
