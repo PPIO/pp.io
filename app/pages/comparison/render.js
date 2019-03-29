@@ -1,6 +1,6 @@
 const headRenderer = require('../../components/common/head/render')
 const headerRenderer = require('../../components/common/header/render')
-const compareRenderer = require('../../components/landpage/compare/render')
+const compareRenderer = require('../../components/comparison/compare/render')
 const footerRenderer = require('../../components/common/footer/render')
 const globalParam = require('../globalParam')
 
