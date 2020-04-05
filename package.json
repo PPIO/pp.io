@@ -97,7 +97,7 @@
     "ip": "^1.1.5",
     "lint-staged": "^7.3.0",
     "mini-css-extract-plugin": "^0.4.1",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "ngrok": "^3.0.1",
     "node-sass": "^4.9.4",
     "npm-logical-tree": "^1.2.1",
