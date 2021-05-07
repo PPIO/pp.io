@@ -135,7 +135,7 @@
     "qs": "^6.5.2",
     "sanitize.css": "^6.0.0",
     "smoothscroll-polyfill": "^0.4.3",
-    "ua-parser-js": "^0.7.18"
+    "ua-parser-js": "^0.7.24"
   },
   "devEngines": {
     "node": ">=8",
