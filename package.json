@@ -99,7 +99,7 @@
     "mini-css-extract-plugin": "^0.4.1",
     "minimist": "^1.2.0",
     "ngrok": "^3.0.1",
-    "node-sass": "^4.9.4",
+    "node-sass": "^7.0.0",
     "npm-logical-tree": "^1.2.1",
     "optimize-css-assets-webpack-plugin": "^4.0.3",
     "postcss-import": "^11.1.0",
