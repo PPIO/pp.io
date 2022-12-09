@@ -132,7 +132,7 @@
     "mobile-detect": "^1.4.3",
     "nodelist-foreach-polyfill": "^1.2.0",
     "picturefill": "^3.0.2",
-    "qs": "^6.5.2",
+    "qs": "^6.5.3",
     "sanitize.css": "^6.0.0",
     "smoothscroll-polyfill": "^0.4.3",
     "ua-parser-js": "^0.7.18"
